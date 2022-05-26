@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  bet_per_hole: 1
+  bet_per_kp: 1
+  bet_per_ld: 1
+
+two:
+  bet_per_hole: 1
+  bet_per_kp: 1
+  bet_per_ld: 1

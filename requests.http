@@ -1,0 +1,17 @@
+###
+GET http://localhost:3000/users
+
+
+###
+POST http://localhost:3000/user_rounds
+Content-Type: application/json 
+
+{
+  "name": "bob",
+  "round_id": 1,
+  "holes_won": 5,
+  "ld_won": 2,
+  "kp_won": 2,
+  "splits": 0,
+  "score": 72
+}

@@ -1,0 +1,36 @@
+
+<h1>All Users</h1>
+<a href="/rounds"> ROUNDS </a> <br>
+<a href="/user_rounds"> USERRounds </a>v
+<table class="basic-table">
+
+<tr>
+  <th>Name</th>
+  <th>Id</th>
+</tr>
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.name%></td>
+    <td><%= user.id%></td>
+  </tr>
+  <% end %>
+</table>
+
+ <div class="row">
+  <div class="users-input">
+    <%= form_with(model: @user, local: true) do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+    <%= f.label :email %>
+    <%= f.email_field :email, class: 'form-control' %>
+    <%= f.label :password %>
+    <%= f.password_field :password, class: 'form-control' %>
+    <%= f.label :password_confirmation, "Confirmation" %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
+    <%= f.submit "Create my account", class: "btn btn-primary" %>
+     
+  <% end %>
+  
+
+  </div>
+</div>
