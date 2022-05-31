@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   post '/user_rounds', to: "user_rounds#create"
   patch '/user_rounds/:id', to: "user_rounds#update"
   delete '/user_rounds/":id"', to: "user_rounds#delete"
+
+  get '/current', to: "user_rounds#current_round"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

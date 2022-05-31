@@ -39,10 +39,19 @@
 
 
 
-
-
-
   <% get_players_in_round(@user_round)%>
+  <% get_round_ids(@user_round)%>
+
+
+
+
+   <% @round_ids.each do |round_id| %>
+    <% check_box_tag(:current_rounds_ids, round_id, false) %>
+   
+   <% end%>
+ 
+
+ 
   
 <h1>Current Round</h1>
 
@@ -74,6 +83,7 @@
 </table>
 
 
+ 
 
 
 <h1> All Rounds </h1>

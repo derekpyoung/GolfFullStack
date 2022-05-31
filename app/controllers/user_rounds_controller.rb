@@ -5,10 +5,13 @@ class UserRoundsController < ApplicationController
     render template: "user_rounds/index"
 
   end
-  
-  def round 
-    @round = Round.all
+
+  def current_round 
+    @user_rounds = UserRound.where(round_id: 1)
+    p @user_rounds
   end 
+
+ 
 
   def show
     render json: 
