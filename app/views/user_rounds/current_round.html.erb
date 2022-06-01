@@ -39,54 +39,33 @@
 
 
 
-
+<h1>Payouts </h1>
 
 <table class="basic-table payout-table" style="width:100%">
     <tr>
-      <th>player name</th>
-      <th>holes total</th>
-      <th>course</th>
-      <th>holes won </th>
-      <th>Longest drive</th>
-      <th>closest to pin</th>
-      <th>splits</th>
-      <th>score</th>
-      
-
+      <th>Player</th>
+      <th>Total</th>
+      <th>Holes $</th>
+      <th>Longest drive $</th>
+      <th>Closest to pin $</th>
+      <th>Splits</th>
+      <th>Score </th>
+      <th>Course</th>
+    
+    
 
     </tr>
     <% @player_win_loss.each do |player| %>
         <tr>
-          <td><%= player[1][:name] %></td>
-          <td><%=player[1][:holes_won] %></td>
+          <td><%= player[1][:name] %> </td>
+          <td><%=player[1][:total] %>$</td>
+          <td><%=player[1][:holes_won] %>$</td>
+          <td><%=player[1][:longest]  %>$</td>
+          <td><%=player[1][:closest] %>$</td>
+          <td><%= player[1][:splits] %>$</td>
+          <td><%=player[1][:score]  %></td>
           <td><%=player[1][:course] %></td>
-          <td><%=  %></td>
-          <td><%=  %></td>
-          <td><%= %></td>
-          <td><%= %></td>
-          <td><%=  %> </td>
         </tr>
-
-        
     <% end %>
 </table>
-<p>player one totals</p>
-holes total: <%=@player_one_holes_final  %> $
-
-
-
-<div>
-<p>player 2 totals</p>
-holes total: <%=@player_two_holes_final%> $
-</div>
-
-<div>
-<p>player 3 totals</p>
-holes total: <%=@player_three_holes_final%> $
-</div>
-
-<div>
-<p>player 4 totals</p>
-holes total: <%=@player_four_holes_final%> $
-</div>
 
