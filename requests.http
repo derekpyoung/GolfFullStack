@@ -15,3 +15,6 @@ Content-Type: application/json
   "splits": 0,
   "score": 72
 }
+
+### 
+GET http://localhost:3000/current/1

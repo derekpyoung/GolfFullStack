@@ -6,8 +6,9 @@ class UsersController < ApplicationController
 
   def show 
     id = params[:id]
-    u = User.find_by(id: id)
-    render json: u.as_json
+    @u = User.find_by(id: id)
+    @rounds = @u.user_rounds
+    render template: "users/show"
   end
 
   def create

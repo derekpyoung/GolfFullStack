@@ -2,14 +2,17 @@ class UserRoundsController < ApplicationController
 
   def index 
     @user_round = UserRound.all 
+    @rounds = Round.all 
     render template: "user_rounds/index"
 
   end
 
   def current_round 
-    @user_rounds = UserRound.where(round_id: 1)
+    @user_rounds = UserRound.where(round_id: params[:id])
     p @user_rounds
   end 
+
+  
 
  
 

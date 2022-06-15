@@ -14,6 +14,11 @@ module UserRoundsHelper
     @round_ids = rounds_arr.uniq()
   end 
 
+  def rounds
+    @rounds = Rounds.all 
+    p @rounds
+  end 
+
   def holes_won_pay(rounds)
     @users = []
     @course = []

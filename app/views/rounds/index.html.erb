@@ -1,13 +1,15 @@
-<h1>round</h1>
+<h1>Rounds</h1>
 <table class="basic-table">
 <a href="/users"> USERS </a> <br>
-<a href="/user_rounds"> user_rounds </a>
+<a href="/user_rounds"> User Rounds </a>
 <tr>
-  <th>Round Id </th>
-  <th>Round Course</th>
+  <th>Round  </th>
+  <th>Course</th>
   <th>Bet Hole</th>
   <th>Bet Kp</th>
   <th>Bet Ld</th>
+  <th>View Round </th>
+  
 </tr>
 <% @round.each do |round| %>
   <tr>
@@ -16,6 +18,7 @@
     <td><%=round.bet_per_hole %>$</td>
     <td><%=round.bet_per_kp %>$</td>
     <td><%=round.bet_per_ld %>$</td>
+    <td><a href="/current/<%=round.id%>">Show</a></td>
   </tr>
   <% end %>
 </table>

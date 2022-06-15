@@ -31,7 +31,7 @@
     <%= f.text_field :splits, class: 'form-control' %> </p>
   <p>  <%= f.label :score %>
     <%= f.text_field :score, class: 'form-control' %> </p>
-    <%= f.submit "Enter round", class: "btn btn-primary" %>
+    <%= f.submit "Submit round", class: "btn btn-primary" %>
 
   <% end %>
   </div>
@@ -43,14 +43,24 @@
   <% get_round_ids(@user_round)%>
 
 
-
-
-   <% @round_ids.each do |round_id| %>
-    <% check_box_tag(:current_rounds_ids, round_id, false) %>
-   
-   <% end%>
+  
+  
+  
  
+   
+  
 
+
+
+
+
+
+
+
+
+
+
+ 
  
   
 <h1>Current Round</h1>
