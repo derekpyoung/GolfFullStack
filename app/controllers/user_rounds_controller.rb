@@ -1,7 +1,7 @@
 class UserRoundsController < ApplicationController
 
   def index 
-    @user_round = UserRound.all 
+    @user_round = UserRound.all
     @rounds = Round.all 
     render template: "user_rounds/index"
 
@@ -37,6 +37,7 @@ class UserRoundsController < ApplicationController
     ur.splits = params[:splits]
     ur.score = params[:score]
     ur.save
+    redirect_to "/user_rounds"
   end
 
   def destroy

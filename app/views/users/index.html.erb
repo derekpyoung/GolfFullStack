@@ -5,15 +5,15 @@
 <table class="basic-table">
 
 <tr>
-  <th>Name</th>
   <th>Id</th>
+  <th>Name</th>
   <th>View</th>
 </tr>
 <% @users.each do |user| %>
   <tr>
-    <td><%= user.name%></td>
     <td><%= user.id%></td>
-    <td><a href="/users/<%=user.id%>">View</a></td>
+    <td><%= user.name.capitalize%></td>
+    <td><a href="/users/<%=user.id%>"><button class="btn" ><%=user.name.capitalize%>'s Rounds</button></a></td>
   </tr>
   <% end %>
 </table>
@@ -29,10 +29,8 @@
     <%= f.password_field :password, class: 'form-control' %><br>
     <%= f.label :password_confirmation, "Confirmation" %><br>
     <%= f.password_field :password_confirmation, class: 'form-control' %><br><br>
-    <%= f.submit "Create my account", class: "btn btn-primary" %>
-     
+    <%= f.submit "Create my account", class: " btn-user" %>
+      
   <% end %>
-  
-
   </div>
 </div>

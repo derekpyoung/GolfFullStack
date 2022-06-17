@@ -13,6 +13,7 @@ class RoundsController < ApplicationController
     r.bet_per_ld = params[:bet_per_ld]
     r.save 
     p r 
+    redirect_to "/rounds"
   end 
 
 end

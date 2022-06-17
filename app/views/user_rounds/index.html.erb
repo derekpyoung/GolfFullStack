@@ -3,11 +3,6 @@
 <a href="/users"> USERS </a> <br>
 <a href="/rounds"> rounds </a>
 
-
-
-
-
-
  <div class="row">
   <div class="user-rounds-input">
     <%= form_with model: @user_rounds , local: true  do |f| %>
@@ -36,51 +31,28 @@
   <% end %>
   </div>
 </div>
-
-
-
   <% get_players_in_round(@user_round)%>
   <% get_round_ids(@user_round)%>
-
-
-  
-  
-  
- 
-   
-  
-
-
-
-
-
-
-
-
-
-
-
- 
  
   
 <h1>Current Round</h1>
 
 <table class="basic-table" style="width:100%">
     <tr>
-      <th>name</th>
+      <th>Name</th>
       <th>Round ID</th>
       <th>Holes Won</th>
       <th>Closest To </th>
       <th>Longest drive</th>
-      <th>splits</th>
-      <th>score</th>
+      <th>Splits</th>
+      <th>Score</th>
       <th>Created At</th>
 
 
     </tr>
     <% @current_round.each do |player_in_round| %>
         <tr>
-          <td><%= player_in_round.user.name  %></td>
+          <td><%= player_in_round.user.name.capitalize  %></td>
           <td><%= player_in_round.round.id %></td>
           <td><%= player_in_round.holes_won %></td>
           <td><%= player_in_round.kp_won %></td>
@@ -99,20 +71,20 @@
 <h1> All Rounds </h1>
 <table class="basic-table" style="width:100%">
     <tr>
-      <th>name</th>
+      <th>Name</th>
       <th>Round ID</th>
       <th>Holes Won</th>
       <th>Closest To </th>
       <th>Longest drive</th>
-      <th>splits</th>
-      <th>score</th>
-      <th>Created At</th>
+      <th>Splits</th>
+      <th>Score</th>
+      <th>Uploaded At</th>
 
 
     </tr>
-    <% @user_round.each do |user_round| %>
+    <% @user_round.reverse.each do |user_round| %>
         <tr>
-          <td><%= user_round.user.name  %></td>
+          <td><%= user_round.user.name.capitalize  %></td>
           <td><%= user_round.round.id %></td>
           <td><%= user_round.holes_won %></td>
           <td><%= user_round.kp_won %></td>

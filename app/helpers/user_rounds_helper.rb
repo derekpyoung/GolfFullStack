@@ -19,6 +19,11 @@ module UserRoundsHelper
     p @rounds
   end 
 
+  def get_course(round)
+    @course = round.course
+  end 
+
+
   def holes_won_pay(rounds)
     @users = []
     @course = []

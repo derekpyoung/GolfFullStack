@@ -18,6 +18,7 @@ class UsersController < ApplicationController
       password_digest: params[:password]
     )
     u.save
+    redirect_to "/users"
     pp u 
    
   
