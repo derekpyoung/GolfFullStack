@@ -1,47 +1,52 @@
-<h1>Rounds</h1>
-<table class="basic-table">
-<a href="/users"> USERS </a> <br>
-<a href="/user_rounds"> User Rounds </a>
-<tr>
-  <th>Round  </th>
-  <th>Course</th>
-  <th>Bet Hole</th>
-  <th>Bet Kp</th>
-  <th>Bet Ld</th>
-  <th>View Round </th>
+<h1 class="center" >Rounds</h1>
+
+<div class="spacer">
+  <table class="basic-table rounds-table" >
+    <tr>
+      <th>Round </th>
+      <th>Course</th>
+      <th>Bet per Hole</th>
+      <th>Closest to Pin</th>
+      <th>Longest Drive Bet</th>
+      
+    </tr>
+    <% @round.reverse.each do |round| %>
+      <tr>
+        <td><%= round.id %> </td>
+        <td><a href="/current/<%=round.id%>"><%=round.course.capitalize%></a></td>
+        <td><%=round.bet_per_hole %>$</td>
+        <td><%=round.bet_per_kp %>$</td>
+        <td><%=round.bet_per_ld %>$</td>
+      </tr>
+      <% end %>
+  </table>
   
-</tr>
-<% @round.each do |round| %>
-  <tr>
-    <td><%= round.id %> </td>
-    <td><%=round.course %> </td>
-    <td><%=round.bet_per_hole %>$</td>
-    <td><%=round.bet_per_kp %>$</td>
-    <td><%=round.bet_per_ld %>$</td>
-    <td><a href="/current/<%=round.id%>">Show</a></td>
-  </tr>
-  <% end %>
-</table>
+  <br>
+  <h3 class="center" >Create New Round</h3>
+  <br>
+  <i class="fa-solid fa-golf-ball-tee"></i>
 
-<div class="row">
-  <div class="rounds-input">
-    <%= form_with model: @rounds , local: true  do |f| %>
+  <div class="row">
+    <div class="rounds-input">
+      <%= form_with model: @rounds , local: true  do |f| %>
 
-     <p> <%= f.label :course %>
-    <%= f.text_field :course, class: 'form-control' %> </p>
+      <p> <%= f.label :course %>
+      <%= f.text_field :course, class: 'form-control' %> </p>
 
-   <p> <%= f.label :per_hole_bet %>
-    <%= f.text_field :bet_per_hole, class: 'form-control' %> </p>
+    <p> <%= f.label :per_hole_bet %>
+      <%= f.text_field :bet_per_hole, class: 'form-control' %> </p>
 
-   <p> <%= f.label :closest_to_pin_bet %>
-    <%= f.text_field :bet_per_kp, class: 'form-control' %> </p>
+    <p> <%= f.label :closest_to_pin_bet %>
+      <%= f.text_field :bet_per_kp, class: 'form-control' %> </p>
 
-  <p>  <%= f.label :longest_drive_bet %>
-    <%= f.text_field :bet_per_ld, class: 'form-control' %> </p>
+    <p>  <%= f.label :longest_drive_bet %>
+      <%= f.text_field :bet_per_ld, class: 'form-control' %> </p>
 
-  
-    <%= f.submit "Enter round", class: "btn btn-primary" %>
+    
+      <%= f.submit "Create Round", class: "btn btn-primary btn-round" %>
 
-  <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
+<br><br>

@@ -44,7 +44,7 @@ module UserRoundsHelper
     end 
    
     player_one_holes = rounds[0].holes_won
-    player_two_holes = rounds[1].holes_won
+    player_two_holes = rounds[1].holes_won 
     player_three_holes = rounds[2].holes_won
     player_four_holes = rounds[3].holes_won
 

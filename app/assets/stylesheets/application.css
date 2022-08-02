@@ -1,82 +1,218 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
 
- .background-img {
-   height: 100vh;
-   /* background-image: linear-gradient(#fcfbcb,#e4e28b); */
-   /* background-image: url("https://images.unsplash.com/photo-1544914379-806667cd9489?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Z29sZiUyMGdyYXNzfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"); */
-   /* opacity: 0.8; */
-   border-radius: 5px;
- }
+  @media (max-width: 812px) {
+}
 
- table {
-   width:95%;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
 
-   border: 1px solid black;
-   background-color: #728155;
-   border-collapse: collapse;
-   padding: 10px;
+.page-header{ 
+  text-align: center;
+}
+.form-control {
+  align-items: center;
+  width: 100%;
+}
 
- 
- }
-
- th, td {
-  border: 1px solid #81b32c;
+h1 {
   padding: 10px;
- }
- th {
-  background-color: #81b32c;
-  border: 1px solid black;
-
- }
- .user-rounds-input {
-   display: flex;
-   flex-wrap: nowrap;
- }
- h1 {
-   padding: 10px;
- }
-
- .users-input {
-   display: flex;
-   flex-wrap: nowrap;
- }
- .btn {
+}
+.users-input {
   display: flex;
+  flex-wrap: nowrap;
+}
+
+.user-rounds-input-container {
   margin: auto;
-  text-decoration: none;
-  background-color: #fcfbcb;
+  padding: 1vw;
+}
+.user-rounds-input {
+  width: 85%;
+  margin: auto;
+  text-align: center;
+
+}
+
+.user-rounds-input-container{
+  width: 90%;
+  border-radius: 15px;
+  margin: auto;
+  padding: 1vw;
+}
+
+.btn {
+display: flex;
+margin: auto;
+text-decoration: none;
+background-color: white;
+color: blue;
+border-radius: 5px;
+box-shadow: none;
+width: 50%;
+justify-content: center;
+}
+.btn:hover {
+  color: black;
+  background-color: #81b32c;
+  box-shadow: 2px 2px grey;
+}
+.btn:active {
+  box-shadow: 1px 1px black;
+}
+.btn-user{
+  background-color: #d6d322;
   border-radius: 5px;
-  box-shadow: none;
-  width: 50%;
+}
+.btn-user:hover {
+  background-color: #81b32c;
+  
+}
+.btn-primary {
+  margin: 5px;
+  align-self: center;
+}
+table th {
+  background-image: linear-gradient(to bottom, grey, lightgrey);
+}
+  
+.users-index-container {
+  width: 95vw;
+}
+
+.current-bets-table th{
+  background-color: grey;
+  background-image: none;
+  color:red;
+}
+
+
+
+.users-index {
+  width: 95%;
+}
+.center {
+  margin: auto; 
+  display: flex;
+  text-align: center;
   justify-content: center;
- }
- .btn:hover {
-   color: black;
-   background-color: #81b32c;
- }
+}
+.btn-round {
+  text-align: center;
+  justify-content: center;
+  margin: auto;
+}
+/* Tables  */
+table {
+  background-image: linear-gradient(to bottom right, #62b44e, #10361b);
+  background-color: whitesmoke;
+  color: black;
+  margin: auto;
+  min-width: 95%;
+  text-align: center;
+  font-weight: bold;
+}
+.user-round-table-container {
+ display: block;
+ border-radius: 15px;
+ margin: 1vw;
+ padding: 1vw;
+}
+.user-round-table  {
+  border-radius: 1vw;
+  align-items: center;
+  margin: auto;
+  max-width: 98%;
+  max-width: 390px;
+  margin-bottom: 4rem;
+  
 
- .btn-user{
-   background-color: #fcfbcb;
-   border-radius: 5px;
- }
- .btn-user:hover {
-   background-color: #81b32c;
-   
- }
+}
+.user-round-table td {
+  text-align: center;
+  padding: .1vw;
+}
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
+.user-round-table th {
+  padding: 2vw;
+  margin-bottom: 1rem;
+}
+.rounds-table {
+  background-color: rgb(95, 131, 116);
+  min-width: 100%;
+  border-radius: 15px;
+  padding: 1rem;
+}
+.rounds-table td a {
+  color: #f9f093;
+  font-weight: bold;
+  
+  
+}
+
+.users-show {
+  background-image: linear-gradient(to bottom right, #62b44e, #10361b);
+  padding: 2rem;
+  margin: 0 auto;
+  table-layout: fixed;
+  text-align: center;
+  border-radius: 3vw;
+}
+
+.users-show-container{
+  width: 100%;
+  overflow: hidden;
+  margin: auto;
+  max-width: 97%;
+}
+.users-show td {
+  padding-left: 0;
+  padding: .9vw;
+  border-top: 1px solid black;
+  word-wrap: break-word;
+  font-size: 1.8vw;
+  /* border: .1rem solid black; */
+}
+
+tr > td:last-of-type {
+  padding-bottom: 2vw;
+
+}
+.users-show th {
+  padding: .9vw;
+  font-size: 2vw;
+ 
+}
+.rounds-table td  {
+  padding: .2rem;
+  font-weight: bold;
+}
+.rounds-table th {
+  padding: .3rem;
+  font-weight: bold;
+}
+.rounds-table a {
+  text-decoration: none;
+}
+
+
+.spacer {
+  width: 100%;
+  padding: 1rem;
+
+}
+
+.container-footer {
+  width: 100%;
+ 
+}
+.img-container {
+  background-image: url("https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
+  width: 100%;
+  min-width: 100vw;
+  height: 6rem;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}

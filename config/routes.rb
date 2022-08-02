@@ -21,8 +21,5 @@ Rails.application.routes.draw do
 
   get '/current', to: "user_rounds#current_round"
   get '/current/:id', to: "user_rounds#current_round"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
 end

@@ -1,31 +1,31 @@
-<h1>Users show</h1>
 
-<a href="/users">Back</a>
+<div class="users-show-container">
 
-<table class="basic-table">
-
-<tr>
-  <th>Name</th>
-  <th>Course</th>
-  <th>Round</th>
-  <th>Holes won</th>
-  <th>Kp won</th>
-  <th>ld won</th>
-  <th>splits won</th>
-  <th>score</th>
-</tr>
-<% @u.user_rounds.each do |user| %>
+  <table class="basic-table table-primary users-show" style="width: 100%">
+  <h1><%= @u.name.upcase %>'S ROUNDS</h1>
   <tr>
-    <td><%= @u.name%>
-    <td><%= user.round.course%></td>
-    <td><%=user.round_id%></td>
-    <td><%= user.holes_won%></td>
-    <td><%= user.kp_won%></td>
-    <td><%= user.ld_won%></td>
-    <td><%= user.splits%></td>
-    <td><%= user.score%></td>
-
+    <th>Course</th>
+    <th>Round</th>
+    <th>Holes won</th>
+    <th>Closest to</th>
+    <th>Longest Drives </th>
+    <th>Splits won</th>
+    <th>Score</th>
   </tr>
-  <% end %>
-</table>
+  <% @u.user_rounds.each do |user| %>
+    <tr>
+      <td><%= user.round.course%></td>
+      <td><%=user.round_id%></td>
+      <td><%= user.holes_won%></td>
+      <td><%= user.kp_won%></td>
+      <td><%= user.ld_won%></td>
+      <td><%= user.splits%></td>
+      <td><%= user.score%></td>
+
+    </tr>
+    <% end %>
+  </table>
+  </div>
+  <br>
+  <a href="/users" class=" center btn btn-primary" >Back</a>
 

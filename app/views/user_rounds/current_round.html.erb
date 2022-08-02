@@ -1,10 +1,24 @@
-<h1> Current </h1>
-<a href="/rounds">Back</a>
+
+<% holes_won_pay(@user_rounds)%>
+
+<table class="current-bets-table table">
+  <tr>
+    <th>Hole bet: </th>
+    <th>Closest bet: </th> 
+    <th>Longest bet: </th>
+  </tr>
+  <tr>
+    <td><%= @cur_round_bets.bet_per_hole %>$</td>
+    <td><%= @cur_round_bets.bet_per_kp %>$</td>
+    <td><%= @cur_round_bets.bet_per_ld %>$</td>
+
+  </tr>
+</table>
+
 <table class="basic-table" style="width:100%">
     <tr>
       <th>Round id</th>
       <th>Player name</th>
-      <th>Course</th>
       <th>Holes won </th>
       <th>Longest drive</th>
       <th>Closest to pin</th>
@@ -14,11 +28,11 @@
 
 
     </tr>
+    <h3><%= @user_rounds.first.round.course.upcase %></h3>
     <% @user_rounds.each do |round| %>
         <tr>
           <td><%= round.round_id %></td>
           <td><%= round.user.name.capitalize %></td>
-          <td><%= round.round.course.capitalize %></td>
           <td><%= round.holes_won %></td>
           <td><%= round.ld_won %></td>
           <td><%= round.kp_won %></td>
@@ -27,10 +41,8 @@
         </tr>
     <% end %>
 </table>
-<% holes_won_pay(@user_rounds)%>
-<p>Hole bet: <%= @cur_round_bets.bet_per_hole %> </p>
-<p>Closest bet: <%= @cur_round_bets.bet_per_kp %> </p>
-<p>Longest bet: <%= @cur_round_bets.bet_per_ld %> </p>
+<br>
+
 
 
 
@@ -45,12 +57,12 @@
     <tr>
       <th>Player</th>
       <th>Total</th>
-      <th>Holes $</th>
-      <th>Longest drive $</th>
-      <th>Closest to pin $</th>
+      <th>Holes</th>
+      <th>Longest Drive</th>
+      <th>Closest to Pin</th>
       <th>Splits</th>
       <th>Score </th>
-      <th>Course</th>
+      
     
     
 
@@ -64,7 +76,7 @@
           <td><%=player[1][:closest] %>$</td>
           <td><%= player[1][:splits] %>$</td>
           <td><%=player[1][:score]  %></td>
-          <td><%=player[1][:course].capitalize %></td>
+         
         </tr>
     <% end %>
 </table>
