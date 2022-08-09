@@ -19,8 +19,12 @@ module UserRoundsHelper
     p @rounds
   end 
 
-  def get_course(round)
-    @course = round.course
+  def get_courses
+    @courses = []
+    @rounds.reverse.each do |round|
+      @courses.push([round.course.upcase + ": " + round.created_at.strftime("%B %d, %Y") ,round.id])
+    end 
+    return @courses
   end 
 
 

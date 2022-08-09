@@ -11,6 +11,10 @@ class UsersController < ApplicationController
     render template: "users/show"
   end
 
+  def home 
+    render "users/home"
+  end 
+
   def create
     u = User.new(
       name: params[:name],

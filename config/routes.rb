@@ -22,4 +22,7 @@ Rails.application.routes.draw do
   get '/current', to: "user_rounds#current_round"
   get '/current/:id', to: "user_rounds#current_round"
 
+  get '/', to: "users#home"
+
+
 end

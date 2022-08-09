@@ -2,22 +2,7 @@
 <h1 class="center">Users</h1>
 
 <div class="spacer">
-<table class="basic-table">
-  <tr>
-   
-    <th>Player</th>
-    <th>View</th>
-  </tr>
-  <% @users.each do |user| %>
-    <tr>
-     
-      <td><%= user.name.capitalize%></td>
-      <td><a href="/users/<%=user.id%>"><button class="btn btn-outline-primary" ><%=user.name.capitalize%>'s Rounds</button></a></td>
-    </tr>
-    <% end %>
-  </table>
-  <br><br>
-  <h3 class="center">Create User</h3>
+<h3 class="center">Create User</h3>
   <br>
   <div class="users-index-container">
     <div class="users-index">
@@ -30,9 +15,26 @@
       <%= f.password_field :password, class: 'form-control' %><br>
       <%= f.label :password_confirmation, "Confirmation" %><br>
       <%= f.password_field :password_confirmation, class: 'form-control' %><br><br>
-      <%= f.submit "Create my account", class: "center btn-user" %>
+      <%= f.submit "Create my account", class: "center btn btn-primary" %>
         
     <% end %>
     </div>
   </div>
- </div> 
+  <br> 
+  <br>
+<table class="basic-table">
+  <tr>
+   <th>ID </th>
+    <th>Player Rounds</th>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.id %> </td>
+      <%# <td><%= user.name.capitalize%></td> 
+      <td><a href="/users/<%=user.id%>"><button class="btn user-btn btn-primary" ><%=user.name.capitalize%>'s Rounds</button></a></td>
+    </tr>
+    <% end %>
+  </table>
+  <br><br>
+  
+</div> 

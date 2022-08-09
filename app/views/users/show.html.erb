@@ -12,9 +12,9 @@
     <th>Splits won</th>
     <th>Score</th>
   </tr>
-  <% @u.user_rounds.each do |user| %>
+  <% @u.user_rounds.reverse.each do |user| %>
     <tr>
-      <td><%= user.round.course%></td>
+      <td><a href="/current/<%= user.round_id %>"><%= user.round.course.capitalize %></td>
       <td><%=user.round_id%></td>
       <td><%= user.holes_won%></td>
       <td><%= user.kp_won%></td>
@@ -28,4 +28,7 @@
   </div>
   <br>
   <a href="/users" class=" center btn btn-primary" >Back</a>
+  <br> 
+  <br>
+  <br>
 

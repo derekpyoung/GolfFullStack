@@ -1,4 +1,5 @@
 module UsersHelper
+  
 
   def holes_total
     @user = User.find_by(id: params[:id])
