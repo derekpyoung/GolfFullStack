@@ -97,7 +97,25 @@ justify-content: center;
   width: 100vw;
   padding: 1rem;
 }
-
+.fbog-h1 {
+  font-weight: 400;
+  font-size: 10vw;
+  color: green;
+ 
+}
+.sign-up {
+  background-color: whitesmoke;
+  background-image: linear-gradient( to bottom, whitesmoke, rgb(216, 213, 213), whitesmoke);
+  box-shadow: .1rem .2rem rgb(134, 133, 133);
+  border: 1px solid black;
+  width: 50%;
+  padding: 1rem;
+  border-radius: 10px;
+}
+.sign-up a {
+  color: green;
+  text-decoration: none;
+}
 
 .users-index {
   width: 95%;
@@ -245,8 +263,10 @@ table th {
   background-position: center;
 }
 .p-4 {
+  padding-top: 1rem !important;
   height: 7.5rem;
 }
+
 .col-lg-6 {
   padding-top: 0;
   text-align: center;

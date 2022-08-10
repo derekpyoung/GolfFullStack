@@ -1,2 +1,24 @@
-<h1>Users#create</h1>
-<p>Find me in app/views/users/create.html.erb</p>
+<div class="spacer">
+  <div class="users-index-container">
+  <% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %> alert-dismissible fade show" role="alert">
+    <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"></button>
+    <%= value %>
+   </div>
+<% end %>
+    <div class="users-index">
+      <%= form_with(model: @user, local: true) do |f| %>
+      <%= f.label :name %> <br>
+      <%= f.text_field :name, class: 'form-control' %><br>
+      <%= f.label :email %><br>
+      <%= f.email_field :email, class: 'form-control' %><br>
+      <%= f.label :password %><br>
+      <%= f.password_field :password, class: 'form-control' %><br>
+      <%= f.label :password_confirmation, "Confirmation" %><br>
+      <%= f.password_field :password_confirmation, class: 'form-control' %><br><br>
+      <%= f.submit "Create my account", class: "center btn btn-primary" %>
+        
+    <% end %>
+    </div>
+  </div>
+</div>

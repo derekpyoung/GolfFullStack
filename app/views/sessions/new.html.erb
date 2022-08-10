@@ -1,0 +1,24 @@
+
+<h1>Login</h1>
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %> alert-dismissible" role="alert">
+    <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"></button>
+    <%= value %>
+   </div>
+<% end %>
+
+  <div class="center">
+    <%= form_tag '/login', method: :post do %>
+    <div class="center">
+      <%= label_tag :email %>
+      <%= text_field_tag :email%>
+    </div>
+    <div class="center">
+      <%= label_tag :password %>
+      <%= password_field_tag :password %>
+    </div>
+    
+      <%= submit_tag 'Submit' %>
+  
+    <%end%>
+  </div> 

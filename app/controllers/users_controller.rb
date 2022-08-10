@@ -16,16 +16,22 @@ class UsersController < ApplicationController
   end 
 
   def create
+    render template: 'users/create'
     u = User.new(
       name: params[:name],
       email: params[:email],
-      password_digest: params[:password]
+      password: params[:password],
+      password_confirmation: params[:password_confirmation]
     )
-    u.save
-    redirect_to "/users"
-    pp u 
-   
-  
+    if u.save
+      flash[:success] = "User Created"
+    
+    else 
+      flash[:danger] =  u.errors.full_messages
+     
+    
+    end 
+     
   end
 
   def destroy

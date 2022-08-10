@@ -1,27 +1,12 @@
 
-<h1 class="center">Users</h1>
 
 <div class="spacer">
-<h3 class="center">Create User</h3>
-  <br>
-  <div class="users-index-container">
-    <div class="users-index">
-      <%= form_with(model: @user, local: true) do |f| %>
-      <%= f.label :name %> <br>
-      <%= f.text_field :name, class: 'form-control' %><br>
-      <%= f.label :email %><br>
-      <%= f.email_field :email, class: 'form-control' %><br>
-      <%= f.label :password %><br>
-      <%= f.password_field :password, class: 'form-control' %><br>
-      <%= f.label :password_confirmation, "Confirmation" %><br>
-      <%= f.password_field :password_confirmation, class: 'form-control' %><br><br>
-      <%= f.submit "Create my account", class: "center btn btn-primary" %>
-        
-    <% end %>
-    </div>
-  </div>
-  <br> 
-  <br>
+
+
+
+
+<h2 class="center">Users</h2>
+<br>
 <table class="basic-table">
   <tr>
    <th>ID </th>

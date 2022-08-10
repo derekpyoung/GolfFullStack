@@ -1,6 +1,12 @@
 <h1 class="center" >Rounds</h1>
 
 <div class="spacer">
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %> alert-dismissible" role="alert">
+    <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"></button>
+    <%= value %>
+   </div>
+<% end %>
   <table class="basic-table rounds-table" >
     <tr>
       <th>Round </th>

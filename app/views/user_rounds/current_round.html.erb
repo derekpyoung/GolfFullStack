@@ -2,6 +2,8 @@
 <% holes_won_pay(@user_rounds)%>
 
 
+    <h1 class="center"><%= @user_rounds.first.round.course.upcase %>  </h1>
+    <h4 class="center">Round #<%= @user_rounds.first.round_id%></h4>
 
 <table class="basic-table" style="width:100%">
     <tr>
@@ -11,12 +13,7 @@
       <th>Closest to pin</th>
       <th>Splits</th>
       <th>Score</th>
-      
-
-
     </tr>
-    <h1 class="center"><%= @user_rounds.first.round.course.upcase %>  </h1>
-    <h4 class="center">Round #<%= @user_rounds.first.round_id%></h4>
     <% @user_rounds.each do |round| %>
         <tr>
           <td><a href="/users/ <%= round.user.id %>" > <%= round.user.name.capitalize %> </a></td>
@@ -28,6 +25,7 @@
         </tr>
     <% end %>
 </table>
+
 <br> <br>
 <h1 class="center">Wagers</h1>
 <table class="current-bets-table basic-table">

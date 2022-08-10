@@ -6,22 +6,29 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-      <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        <% if !current_user %>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/login">Login</a>
         </li>
+        <%end%>
+        <% if current_user %>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/logout">Logout</a>
+        </li>
+        <%end %>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/users">Users</a>
         </li>
+        <% if current_user %>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/user_rounds">Join a Round</a>
         </li>
-       
+        
         <li class="nav-item">
-          <a class="nav-link" href="/rounds">Rounds</a>
+          <a class="nav-link active" href="/rounds">Rounds</a>
         </li>
-        <%# <li class="nav-item">
-          <a class="nav-link" href="/user_rounds">User Rounds</a>
-        </li> %>
+        <%end%>
+      
       </ul>
       <%# <span class="navbar-text">
         Navbar text with an inline element

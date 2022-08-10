@@ -18,3 +18,12 @@ Content-Type: application/json
 
 ### 
 GET http://localhost:3000/current/1
+
+###
+POST http://localhost:3000/sessions
+Content-Type: application/html
+
+{
+  "email": "bob@email.com",
+  "password": "password"
+}

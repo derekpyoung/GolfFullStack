@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get "/users", to: 'users#index'
   get '/users/:id', to: 'users#show'
-  post '/users', to: "users#create"
+  post '/users/new', to: "users#create"
   patch '/users/:id', to: "users#update"
   delete '/users/":id"', to: "users#delete"
 
@@ -19,10 +19,16 @@ Rails.application.routes.draw do
   patch '/user_rounds/:id', to: "user_rounds#update"
   delete '/user_rounds/":id"', to: "user_rounds#delete"
 
-  get '/current', to: "user_rounds#current_round"
   get '/current/:id', to: "user_rounds#current_round"
 
   get '/', to: "users#home"
+  get '/signup', to: "users#create"
+
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
+  
+
 
 
 end

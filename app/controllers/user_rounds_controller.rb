@@ -24,22 +24,28 @@ class UserRoundsController < ApplicationController
   end
 
   def create
-    name = params[:name]
-    u = User.find_by(name: name)
+    if current_user
+      name = params[:name]
+      u = User.find_by(name: name)
 
-    id = params[:round_id]
-    r = Round.find_by(id: id)
+      id = params[:round_id]
+      r = Round.find_by(id: id)
 
-    ur = UserRound.new
-    ur.user_id = u.id 
-    ur.round_id = r.id 
-    ur.holes_won = params[:holes_won]
-    ur.kp_won = params[:kp_won]
-    ur.ld_won = params[:ld_won]
-    ur.splits = params[:splits]
-    ur.score = params[:score]
-    ur.save
-    redirect_to "/user_rounds"
+      ur = UserRound.new
+      ur.user_id = u.id 
+      ur.round_id = r.id 
+      ur.holes_won = params[:holes_won]
+      ur.kp_won = params[:kp_won]
+      ur.ld_won = params[:ld_won]
+      ur.splits = params[:splits]
+      ur.score = params[:score]
+      ur.save
+      flash[:success] = "Round entered"
+      redirect_to "/user_rounds"
+    else 
+      flash[:warning] = "You must be logged in"
+      redirect_to '/login'
+    end 
   end
 
   def destroy

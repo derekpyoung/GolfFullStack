@@ -1,5 +1,11 @@
 
 <h1 class="page-header" >Join Round</h1>
+<% flash.each do |key, value| %>
+  <div class="alert alert-<%= key %> alert-dismissible" role="alert">
+    <button type="btn center btn-primary" class="submit" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <%= value %>
+   </div>
+<% end %>
   <% get_courses %>
 
  <div class="user-rounds-input-container">
@@ -13,9 +19,6 @@
   </p>
   <p> <%= f.label :name %>
     <%= f.text_field :name, class: 'form-control' %> </p>
-
-   
-  
 
   <p>  <%= f.label :holes  %>
     <%= f.text_field :holes_won, class: 'form-control' %> </p>
