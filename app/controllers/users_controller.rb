@@ -16,7 +16,6 @@ class UsersController < ApplicationController
   end 
 
   def create
-    render template: 'users/create'
     u = User.new(
       name: params[:name],
       email: params[:email],
@@ -25,11 +24,9 @@ class UsersController < ApplicationController
     )
     if u.save
       flash[:success] = "User Created"
-    
+      redirect_to "/login"
     else 
       flash[:danger] =  u.errors.full_messages
-     
-    
     end 
      
   end
