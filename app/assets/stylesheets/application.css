@@ -104,7 +104,7 @@ justify-content: center;
  
 }
 .sign-up {
-  background-color: whitesmoke;
+  /* background-color: whitesmoke; */
   background-image: linear-gradient( to bottom, whitesmoke, rgb(216, 213, 213), whitesmoke);
   box-shadow: .1rem .2rem rgb(134, 133, 133);
   border: 1px solid black;
@@ -163,14 +163,12 @@ table th {
   padding: .01rem;
   overflow: hidden;
   max-width: 100%;
-  /* white-space: nowrap; */
   margin-bottom: 4rem;
   
 
 }
 .sign-up {
   display: block;
-  /* background-color: rebeccapurple; */
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -185,7 +183,6 @@ table th {
   margin-bottom: .8rem;
 }
 .rounds-table {
-  /* background-color: rgb(95, 131, 116); */
   min-width: 100%;
   border-radius: 1px;
   padding: 1rem;
@@ -277,4 +274,21 @@ footer {
   display: block;
 
   bottom: 0 !important;
+}
+
+.login-container {
+  display: flex;
+  border: 1px solid black;
+  padding: 2rem;
+  border-radius: 15px;
+  background-image: linear-gradient( whitesmoke, rgb(241, 241, 241), whitesmoke);
+  box-shadow: .01rem .02rem rgb(228, 228, 228);
+  
+}
+.login {
+  justify-content: flex-end;
+}
+.end {
+  width: 100%;
+  
 }
