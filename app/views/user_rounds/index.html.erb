@@ -6,14 +6,19 @@
     <%= value %>
    </div>
 <% end %>
-  <% get_courses %>
+
+
 
  <div class="user-rounds-input-container">
   <div class="user-rounds-input form-control" type="text" >
     <%= form_with model: @user_rounds , local: true do |f| %>
+      <%= f.hidden_field :round_id %>
   <p> <%= f.label :round_id %>
+  
      <div data-controller="course">
-        <%= f.select :round_id, @courses, {prompt: "Select a Round"}, {class: 'form-select'} %>
+        <%= f.select :round_id, options_for_select(@round.reverse.map{ |r| ["#{r.course.capitalize} (#{r.created_at.strftime('%m/%d/%Y')})", r.id] }), {prompt: "Select a Round"}, {class: 'form-select'} %>
+
+
       </div>
     
   </p>
@@ -38,8 +43,8 @@
   <% end %>
   </div>
 </div>
-  <% get_players_in_round(@user_round)%>
-  <% get_round_ids(@user_round)%>
+
+
   
 
 
@@ -74,29 +79,3 @@
     </table>
 </div>
 
-<%# 
- <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-      Round
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-         <% @rounds.reverse.each do |f| %>
-          <%# <li><button class="dropdown-item" action="" type="button"> <%= f.course.upcase %> 
-           <%# &#10095 <%= f.created_at.strftime("%B %d, %Y")%>
-           <%# </button> </li> %> 
-          <%# <%end%>
-      <%# </ul> %>
-    <%# </div> %> 
-
-
-
-        <%# <select name="course" id="course" >
-    <% @user_round.reverse.each do |round| %>
-    
-     <%# <option value= `round.round_id`> <%= round.round.course.upcase %> 
-     <%# (<%= round.round_id %>
-      <%# %>
-      <%# </option>  %>
-      
-      <%# <% end %> 
-    <%# </select> %>

@@ -35,9 +35,8 @@
   <div class="row">
     <div class="rounds-input">
       <%= form_with model: @rounds , local: true  do |f| %>
-
       <p> <%= f.label :course %>
-      <%= f.text_field :course, class: 'form-control', placeholder: "Course" %>  </p>
+      <%= f.text_field :course, class: 'form-control', placeholder: "Course"%>  </p>
 
     <p> <%= f.label :per_hole_bet %> 
       <%= f.text_field :bet_per_hole, class: 'form-control', placeholder: "$"%> </p>

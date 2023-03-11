@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Round <%= @round.id %> User Rounds</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Score</th>
+        <th>Created At</th>
+        <th>Updated At</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user_rounds.each do |user_round| %>
+        <tr>
+          <td>
+            <%= user_round.user.name %>
+          </td>
+          <td>
+            <%= user_round.score %>
+          </td>
+          <td>
+            <%= user_round.created_at %>
+          </td>
+          <td>
+            <%= user_round.updated_at %>
+          </td>
+        </tr>
+        <% end %>
+    </tbody>
+  </table>
+
+</body>
+
+</html>

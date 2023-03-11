@@ -5,6 +5,7 @@ class Round < ApplicationRecord
   validates :bet_per_kp, presence: true
   validates :bet_per_ld, presence: true
   validates :course, presence: true
- 
- 
+
+  
+
 end

@@ -5,5 +5,4 @@ class UserRound < ApplicationRecord
 
 
 
- 
-end
+end 

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="user-rounds-input-container">
+  <div class="user-rounds-input form-control" type="text" >
+    <%= form_with model: @user_rounds , local: true do |f| %>
+  <p> <%= f.label :round_id %>
+     <div data-controller="course">
+        <%= f.select :round_id, @courses, {prompt: "Select a Round"}, {class: 'form-select'} %>
+      </div>
+    
+  </p>
+  <p> <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %> </p>
+
+  <p>  <%= f.label :holes  %>
+    <%= f.text_field :holes_won, class: 'form-control' %> </p>
+
+   <p> <%= f.label :Longest %> 
+    <%= f.text_field :ld_won, class: 'form-control' %> </p>
+
+  <p>  <%= f.label :Closest %>
+    <%= f.text_field :kp_won, class: 'form-control' %> </p>
+
+  <p>  <%= f.label :splits %>
+    <%= f.text_field :splits, class: 'form-control' %> </p>
+  <p>  <%= f.label :score %>
+    <%= f.text_field :score, class: 'form-control' %> </p>
+    <%= f.submit "Submit Round", class: "center btn btn-primary" %>
+  <% end %>
+  </div>
+</div>
+
+</body>
+
+</html>

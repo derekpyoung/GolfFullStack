@@ -1,14 +1,11 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
-    render template: "users/index"
   end
 
   def show 
     id = params[:id]
     @u = User.find_by(id: id)
-    @rounds = @u.user_rounds
-    render template: "users/show"
   end
 
   def home 

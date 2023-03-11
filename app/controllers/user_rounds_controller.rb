@@ -1,26 +1,17 @@
 class UserRoundsController < ApplicationController
-
   def index 
     @user_round = UserRound.all
-    @rounds = Round.all 
-    render template: "user_rounds/index"
-
+    @round = Round.all 
   end
 
-  def current_round 
-    @user_rounds = UserRound.where(round_id: params[:id])
-    p @user_rounds
+  def current_round
+    @user_rounds = UserRound.all.where(round_id: params[:id])
+    @round = Round.where(id: params[:id])
+
   end 
 
- 
-
-  
-
- 
-
   def show
-    render json: 
-       UserRound.find(params[:id])
+    UserRound.find(params[:id])
   end
 
   def create
@@ -28,12 +19,13 @@ class UserRoundsController < ApplicationController
       name = params[:name]
       u = User.find_by(name: name)
 
-      id = params[:round_id]
-      r = Round.find_by(id: id)
+      course = params[:round_id]
+      course = Round.find_by(course: course)
+  
 
       ur = UserRound.new
       ur.user_id = u.id 
-      ur.round_id = r.id 
+      ur.round_id = params[:round_id]
       ur.holes_won = params[:holes_won]
       ur.kp_won = params[:kp_won]
       ur.ld_won = params[:ld_won]
@@ -68,9 +60,5 @@ class UserRoundsController < ApplicationController
     r.save
     render json: r
   end
+end 
 
-  private 
-
-
-
-end
