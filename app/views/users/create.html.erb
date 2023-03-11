@@ -1,9 +1,18 @@
-    <% flash.each do |key, value| %>
-      <div class="alert alert-<%= key %> alert-dismissible fade show" role="alert">
-        <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"></button>
-        <%= value %>
+   <% flash.each do |key, value| %>
+  <% if key == "error" && value.is_a?(ActiveModel::Errors) %>
+    <% value.each do |attribute, message| %>
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+        <%= "#{attribute.capitalize} #{message}" %>
       </div>
     <% end %>
+  <% elsif key == "success" %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close"></button>
+      <%= value %>
+    </div>
+  <% end %>
+<% end %>
 <div class="spacer">
   <div class="users-index-container">
     <div class="users-index">

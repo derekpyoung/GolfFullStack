@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   end 
 
   def create
+    flash.clear
     u = User.new(
       name: params[:name],
       email: params[:email],
