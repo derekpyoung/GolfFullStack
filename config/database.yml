@@ -12,6 +12,7 @@ default: &default
 development:
   <<: *default
   database: my_database_development
+  url: postgres://jesuhrebfkahbl:ee1355a1605f81ebb2866826d4aa8646b825fc6befaf22c7c758bede8542a67f@ec2-3-208-74-199.compute-1.amazonaws.com:5432/deh3q0vs2fnc39
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -22,4 +23,5 @@ test:
 
 production:
   <<: *default
+  url: postgres://jesuhrebfkahbl:ee1355a1605f81ebb2866826d4aa8646b825fc6befaf22c7c758bede8542a67f@ec2-3-208-74-199.compute-1.amazonaws.com:5432/deh3q0vs2fnc39
   database: my_database_production
