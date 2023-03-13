@@ -1,20 +1,23 @@
-
-  @media (max-width: 812px) {
-}
+@media (max-width: 812px) {}
 
 * {
   margin: 0;
   padding: 0;
   font-family: 'Roboto', sans-serif;
 }
-.container-fluid {
-  width: 100vw;
-  /* background-color: rgb(231, 194, 139); */
+
+.navbar-nav a:hover {
+  color: rgb(2, 93, 24) !important;
 }
 
-.page-header{ 
+.container-fluid {
+  width: 100vw;
+}
+
+.page-header {
   text-align: center;
 }
+
 .form-control {
   align-items: center;
   width: 100%;
@@ -23,6 +26,7 @@
 h1 {
   padding: 10px;
 }
+
 .users-input {
   display: flex;
   flex-wrap: nowrap;
@@ -32,6 +36,7 @@ h1 {
   margin: auto;
   padding: 1vw;
 }
+
 .user-rounds-input {
   width: 85%;
   /* border: 3px solid green; */
@@ -41,7 +46,7 @@ h1 {
 
 }
 
-.user-rounds-input-container{
+.user-rounds-input-container {
   width: 90%;
   border-radius: 1px;
   margin: auto;
@@ -49,29 +54,32 @@ h1 {
 }
 
 .btn {
-display: flex;
-margin: auto;
-text-decoration: none;
-background-color: white;
-color: tan;
-border: 1px solid tan;
-box-shadow: none;
-width: 50%;
-justify-content: center;
+  display: flex;
+  margin: auto;
+  text-decoration: none;
+  background-color: white;
+  color: tan;
+  border: 1px solid tan;
+  box-shadow: none;
+  width: 50%;
+  justify-content: center;
 }
+
 .btn:hover {
   color: black;
   background-color: tan;
   box-shadow: 2px 2px lightgrey;
   border: 1px solid tan;
 }
+
 .btn:active {
   box-shadow: 1px 1px black;
 }
-.user-btn{
+
+.user-btn {
   text-decoration: none;
   width: 50%;
-  
+
 }
 
 
@@ -88,7 +96,7 @@ justify-content: center;
   text-align: center;
 }
 
-  
+
 .users-index-container {
   width: 95vw;
 }
@@ -97,21 +105,24 @@ justify-content: center;
   width: 100vw;
   padding: 1rem;
 }
+
 .fbog-h1 {
   font-weight: 400;
   font-size: 10vw;
   color: green;
- 
+
 }
+
 .sign-up {
   /* background-color: whitesmoke; */
-  background-image: linear-gradient( to bottom, whitesmoke, rgb(216, 213, 213), whitesmoke);
+  background-image: linear-gradient(to bottom, whitesmoke, rgb(216, 213, 213), whitesmoke);
   box-shadow: .1rem .2rem rgb(134, 133, 133);
   border: 1px solid black;
   width: 50%;
   padding: 1rem;
   border-radius: 10px;
 }
+
 .sign-up a {
   color: green;
   text-decoration: none;
@@ -120,17 +131,20 @@ justify-content: center;
 .users-index {
   width: 95%;
 }
+
 .center {
-  margin: auto; 
+  margin: auto;
   display: flex;
   text-align: center;
   justify-content: center;
 }
+
 .btn-round {
   text-align: center;
   justify-content: center;
   margin: auto;
 }
+
 /* Tables  */
 table {
   background-color: whitesmoke;
@@ -140,21 +154,25 @@ table {
   text-align: center;
   font-weight: bold;
 }
+
 table tr:nth-child(odd) {
   background-color: rgb(211, 230, 215);
 }
+
 table th {
   background-color: lightgray;
 }
+
 .user-round-table-container {
- display: block;
- border-radius: 1px;
- margin: 1vw;
- width: 100vw;
- max-width: 99%;
- padding: 1vw;
+  display: block;
+  border-radius: 1px;
+  margin: 1vw;
+  width: 100vw;
+  max-width: 99%;
+  padding: 1vw;
 }
-.user-round-table  {
+
+.user-round-table {
   align-items: center;
   margin: auto;
   width: 100vw;
@@ -164,15 +182,15 @@ table th {
   overflow: hidden;
   max-width: 100%;
   margin-bottom: 4rem;
-  
-
 }
+
 .sign-up {
   display: block;
   justify-content: center;
   align-items: center;
   text-align: center;
 }
+
 .user-round-table td {
   text-align: center;
   padding: .1vw;
@@ -182,18 +200,20 @@ table th {
   padding: 1vw;
   margin-bottom: .8rem;
 }
+
 .rounds-table {
   min-width: 100%;
   border-radius: 1px;
   padding: 1rem;
 }
+
 .rounds-table td a {
   color: #03339b;
   font-weight: bold;
 }
 
 .users-show {
- 
+
   padding: 2rem;
   margin: 0 auto;
   table-layout: fixed;
@@ -201,12 +221,13 @@ table th {
   border-radius: 3vw;
 }
 
-.users-show-container{
+.users-show-container {
   width: 100%;
   overflow: hidden;
   margin: auto;
   max-width: 97%;
 }
+
 .users-show td {
   padding-left: 0;
   padding: .9vw;
@@ -216,24 +237,31 @@ table th {
 }
 
 
+
+
+
 .users-show th {
   padding: .9vw;
   font-size: 2vw;
- 
+
 }
+
 .users-show a {
   text-decoration: none;
   font-weight: 900;
   color: #03339b;
 }
-.rounds-table td  {
+
+.rounds-table td {
   padding: .2rem;
   font-weight: bold;
 }
+
 .rounds-table th {
   padding: .3rem;
   font-weight: bold;
 }
+
 .rounds-table a {
   text-decoration: none;
 }
@@ -248,8 +276,9 @@ table th {
 .container-footer {
   width: 100%;
   height: 4vh;
- 
+
 }
+
 .img-container {
   background-image: url("https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
   width: 100vw;
@@ -259,21 +288,37 @@ table th {
   background-repeat: no-repeat;
   background-position: center;
 }
+
 .p-4 {
   padding-top: 1rem !important;
   height: 7.5rem;
 }
+
+.text-muted {
+  justify-content: center;
+  text-align: center;
+  font-size: 10px;
+  bottom: 0;
+  margin-top: 1rem;
+}
+
+
+
 
 .col-lg-6 {
   padding-top: 0;
   text-align: center;
   width: 100vw;
 }
-footer {
-  position: relative;
-  display: block;
 
+footer {
+  margin-top: 1em;
+  width: 100vw;
+  justify-content: center;
+  text-align: center;
+  display: block;
   bottom: 0 !important;
+  position: relative;
 }
 
 .login-container {
@@ -281,14 +326,14 @@ footer {
   border: 1px solid black;
   padding: 2rem;
   border-radius: 15px;
-  background-image: linear-gradient( whitesmoke, rgb(241, 241, 241), whitesmoke);
+  background-image: linear-gradient(whitesmoke, rgb(241, 241, 241), whitesmoke);
   box-shadow: .01rem .02rem rgb(228, 228, 228);
-  
 }
+
 .login {
   justify-content: flex-end;
 }
+
 .end {
   width: 100%;
-  
 }

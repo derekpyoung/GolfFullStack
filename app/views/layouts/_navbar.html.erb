@@ -11,13 +11,8 @@
           <a class="nav-link active" aria-current="page" href="/login">Login</a>
         </li>
         <%end%>
-        <% if current_user %>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/logout">Logout</a>
-        </li>
-        <%end %>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/users">Users</a>
+          <a class="nav-link active" aria-current="page" href="/users">Golfers</a>
         </li>
         <% if current_user %>
         <li class="nav-item">
@@ -28,6 +23,11 @@
           <a class="nav-link active" href="/rounds">Rounds</a>
         </li>
         <%end%>
+        <% if current_user %>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/logout">Logout</a>
+        </li>
+        <%end %>
       
       </ul>
       <%# <span class="navbar-text">
