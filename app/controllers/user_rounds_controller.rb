@@ -17,6 +17,7 @@ class UserRoundsController < ApplicationController
   def create
     if current_user
       name = params[:name]
+      name = name.downcase 
       u = User.find_by(name: name)
 
       course = params[:round_id]
