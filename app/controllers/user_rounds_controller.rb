@@ -16,16 +16,16 @@ class UserRoundsController < ApplicationController
 
   def create
     if current_user
-      name = params[:name]
-      name = name.downcase 
-      u = User.find_by(name: name)
+      # name = params[:name]
+      # name = name.downcase 
+      # u = User.find_by(name: name)
 
       course = params[:round_id]
       course = Round.find_by(course: course)
   
 
       ur = UserRound.new
-      ur.user_id = u.id 
+      ur.user_id = current_user.id 
       ur.round_id = params[:round_id]
       ur.holes_won = params[:holes_won]
       ur.kp_won = params[:kp_won]
