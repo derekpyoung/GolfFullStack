@@ -179,12 +179,9 @@ table {
   min-width: 95%;
   text-align: center;
   font-weight: bold;
+  border-radius: 15px;
 }
 
-.select-course {
-  color: red;
-  padding-left: 50%;
-}
 
 table tr:nth-child(odd) {
   /* background-color: rgb(211, 230, 215); */
@@ -197,7 +194,7 @@ table th {
 
 .user-round-table-container {
   display: block;
-  border-radius: 1px;
+  border-radius: 15px;
   margin: 1vw;
   width: 100vw;
   max-width: 99%;
@@ -210,6 +207,7 @@ table th {
   width: 100vw;
   column-width: auto;
   column-gap: 0;
+  border-radius: 15px;
   padding: .01rem;
   overflow: hidden;
   max-width: 100%;
@@ -225,7 +223,7 @@ table th {
 
 .user-round-table td {
   text-align: center;
-  padding: .1vw;
+  padding: .2rem;
 }
 
 .user-round-table th {
@@ -235,12 +233,17 @@ table th {
 
 .rounds-table {
   min-width: 100%;
-  border-radius: 1px;
+  border-radius: 15px;
   padding: 1rem;
 }
 
 .rounds-table td a {
-  color: #03339b;
+  color: #1a7d09;
+  font-weight: bold;
+}
+
+.rounds-table td a:hover {
+  color: #000000;
   font-weight: bold;
 }
 
