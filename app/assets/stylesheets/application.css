@@ -6,6 +6,7 @@
   font-family: 'Roboto', sans-serif;
 }
 
+
 body {
   background-color: rgb(218, 226, 218);
 }
@@ -25,8 +26,6 @@ body {
 
 
 .navbar-brand {
-  /* background-color: rgb(249, 228, 194);
-  border: 1px solid rgb(249, 228, 194); */
   border-radius: 15px;
   padding: 5px;
 }
@@ -71,6 +70,27 @@ h1 {
   box-shadow: 10px 13px 5px 0px rgba(153, 153, 153, 0.22);
 }
 
+.user-round-table a {
+  color: #1a7d09;
+}
+
+.user-round-table a:hover {
+  color: #082503;
+}
+
+.golf-cup {
+  margin-top: 0;
+  width: 100vw;
+  /* border: 1px solid black; */
+  height: 5rem;
+  margin-bottom: 1rem;
+}
+
+.golf-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
 
 .user-rounds-input-container {
   width: 90%;
@@ -271,14 +291,9 @@ table th {
   font-size: 1.8vw;
 }
 
-
-
-
-
 .users-show th {
   padding: .9vw;
   font-size: 2vw;
-
 }
 
 .users-show a {

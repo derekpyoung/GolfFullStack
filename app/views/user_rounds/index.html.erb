@@ -60,7 +60,7 @@
     <table class="user-round-table ">
       <tr>
         <th>Name</th>
-        <th>Round ID</th>
+        <th>Course</th>
         <th>Holes Won</th>
         <th>Closest To </th>
         <th>Longest drive</th>
@@ -69,7 +69,7 @@
         <% @user_round.reverse.each do |user_round| %>
           <tr >
             <td><%= user_round.user.name.capitalize  %></td>
-            <td><%= user_round.round.id %> </td>
+            <td><a href="/current/<%=user_round.round.id%>"><%= user_round.round.course.capitalize %></a> </td>
             <td><%= user_round.holes_won %></td>
             <td><%= user_round.kp_won %></td>
             <td><%= user_round.ld_won %></td>
