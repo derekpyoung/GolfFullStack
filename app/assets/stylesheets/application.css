@@ -8,7 +8,8 @@
 
 
 body {
-  background-color: rgb(218, 226, 218);
+  background: rgb(217, 228, 217);
+  background: radial-gradient(circle, rgb(217, 228, 217) 0%, rgba(132, 172, 132, 1) 100%);
 }
 
 .create-round {
@@ -81,8 +82,7 @@ h1 {
 .golf-cup {
   margin-top: 0;
   width: 100vw;
-  /* border: 1px solid black; */
-  height: 5rem;
+  height: 5.2rem;
   margin-bottom: 1rem;
 }
 
@@ -90,6 +90,7 @@ h1 {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  transform: translateY(-35%);
 }
 
 .user-rounds-input-container {
@@ -204,7 +205,6 @@ table {
 
 
 table tr:nth-child(odd) {
-  /* background-color: rgb(211, 230, 215); */
   background-color: rgb(240, 231, 218);
 }
 
@@ -223,15 +223,26 @@ table th {
 
 .user-round-table {
   align-items: center;
-  margin: auto;
-  width: 100vw;
+  width: 99vw;
   column-width: auto;
-  column-gap: 0;
   border-radius: 15px;
-  padding: .01rem;
   overflow: hidden;
-  max-width: 100%;
+  max-width: 99vw;
   margin-bottom: 4rem;
+  overflow: hidden;
+}
+
+.user-round-table td {
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+@media (max-width: 608px) {
+
+  .user-round-table td:nth-child(6),
+  .user-round-table th:nth-child(6) {
+    display: none;
+  }
 }
 
 .sign-up {
@@ -255,6 +266,7 @@ table th {
   min-width: 100%;
   border-radius: 15px;
   padding: 1rem;
+  margin: auto;
 }
 
 .rounds-table td a {
