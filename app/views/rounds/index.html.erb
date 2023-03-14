@@ -30,9 +30,9 @@
   <br>
   <h3 class="center" >Create New Round</h3>
   <br>
-  <i class="fa-solid fa-golf-ball-tee"></i>
 
-  <div class="row">
+
+  <div class="create-round row">
     <div class="rounds-input">
       <%= form_with model: @rounds , local: true  do |f| %>
       <p> <%= f.label :course %>
@@ -48,7 +48,7 @@
       <%= f.text_field :bet_per_ld, class: 'form-control',placeholder: "$" %> </p>
 
     
-      <%= f.submit "Create Round", class: "btn btn-primary btn-round" %>
+      <%= f.submit "Submit", class: "btn btn-primary btn-round" %>
 
       <% end %>
     </div>

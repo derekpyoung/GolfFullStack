@@ -6,6 +6,31 @@
   font-family: 'Roboto', sans-serif;
 }
 
+body {
+  background-color: rgb(218, 226, 218);
+}
+
+.create-round {
+  display: flex;
+  width: 100%;
+  justify-content: center !important;
+
+}
+
+.rounds-input {
+  width: 40%;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.navbar-brand {
+  /* background-color: rgb(249, 228, 194);
+  border: 1px solid rgb(249, 228, 194); */
+  border-radius: 15px;
+  padding: 5px;
+}
+
 .navbar-nav a:hover {
   color: rgb(2, 93, 24) !important;
 }
@@ -32,19 +57,20 @@ h1 {
   flex-wrap: nowrap;
 }
 
-.user-rounds-input-container {
-  margin: auto;
-  padding: 1vw;
-}
+
 
 .user-rounds-input {
-  width: 85%;
+  width: 65%;
   /* border: 3px solid green; */
   border-radius: 5px;
+
   margin: auto;
   text-align: center;
-
+  -webkit-box-shadow: 10px 13px 5px 0px rgba(153, 153, 153, 0.22);
+  -moz-box-shadow: 10px 13px 5px 0px rgba(153, 153, 153, 0.22);
+  box-shadow: 10px 13px 5px 0px rgba(153, 153, 153, 0.22);
 }
+
 
 .user-rounds-input-container {
   width: 90%;
@@ -155,8 +181,14 @@ table {
   font-weight: bold;
 }
 
+.select-course {
+  color: red;
+  padding-left: 50%;
+}
+
 table tr:nth-child(odd) {
-  background-color: rgb(211, 230, 215);
+  /* background-color: rgb(211, 230, 215); */
+  background-color: rgb(240, 231, 218);
 }
 
 table th {
