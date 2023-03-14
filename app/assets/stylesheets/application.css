@@ -237,6 +237,19 @@ table th {
   white-space: nowrap;
 }
 
+.create-container {
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.users-create {
+  width: 50%;
+  text-align: center;
+  justify-self: center;
+  margin: 0 auto;
+}
+
 @media (max-width: 608px) {
 
   .user-round-table td:nth-child(6),
