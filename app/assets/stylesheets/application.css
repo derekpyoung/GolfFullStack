@@ -382,6 +382,7 @@ table th {
   width: 100vw;
 }
 
+
 footer {
   margin-top: 1em;
   width: 100vw;
@@ -398,7 +399,6 @@ footer {
 .container-footer {
   width: 100%;
   height: 4vh;
-  margin-bottom: 5px;
   flex-grow: 1;
   position: relative;
   justify-content: center;
