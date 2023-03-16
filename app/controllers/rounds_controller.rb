@@ -7,10 +7,10 @@ class RoundsController < ApplicationController
 
   def create 
     r = Round.new 
-    r.course = params[:course]
-    r.bet_per_hole = params[:bet_per_hole]
-    r.bet_per_kp = params[:bet_per_kp]
-    r.bet_per_ld = params[:bet_per_ld]
+    r.course = params[:course] || ""
+    r.bet_per_hole = params[:bet_per_hole] || 0
+    r.bet_per_kp = params[:bet_per_kp] || 0
+    r.bet_per_ld = params[:bet_per_ld] || 0 
   
     if r.save
       flash[:success] = "Round Created"

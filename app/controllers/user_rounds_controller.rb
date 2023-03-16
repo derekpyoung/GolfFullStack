@@ -15,27 +15,27 @@ class UserRoundsController < ApplicationController
   end
 
   def create
+    flash.clear
     if current_user
-      # name = params[:name]
-      # name = name.downcase 
-      # u = User.find_by(name: name)
-
       course = params[:round_id]
       course = Round.find_by(course: course)
-  
-
       ur = UserRound.new
       ur.user_id = current_user.id 
-      ur.round_id = params[:round_id]
+      ur.round_id = params[:round_id] 
       ur.holes_won = params[:holes_won]
-      ur.kp_won = params[:kp_won]
-      ur.ld_won = params[:ld_won]
-      ur.splits = params[:splits]
-      ur.score = params[:score]
-      ur.save
-      flash[:success] = "Round entered"
-      redirect_to "/user_rounds"
+      ur.kp_won = params[:kp_won] 
+      ur.ld_won = params[:ld_won] 
+      ur.splits = params[:splits] 
+      ur.score = params[:score] 
+      if ur.save
+        flash[:success] = "Round entered"
+        redirect_to "/user_rounds"
+      else 
+        flash[:warning] = "Enter all details"
+        redirect_to "/user_rounds"
+      end 
     else 
+
       flash[:warning] = "You must be logged in"
       redirect_to '/login'
     end 
