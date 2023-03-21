@@ -2,7 +2,7 @@ module UserRoundsHelper
   def total_kp
     @total_kp = 0
     @user_rounds.each do |round|
-      @total_kp += round[:kp_won]
+      @total_kp += round[:kp_won].to_i
     end
     @total_kp
   end 
@@ -16,7 +16,7 @@ module UserRoundsHelper
   def total_holes 
     total_holes = 0
     @user_rounds.each do |round|
-      total_holes += round[:holes_won]
+      total_holes += round[:holes_won].to_i
     end
     total_holes 
   end 
@@ -24,7 +24,7 @@ module UserRoundsHelper
   def total_ld 
     total_ld = 0
     @user_rounds.each do |rounds|
-      total_ld += rounds[:ld_won]
+      total_ld += rounds[:ld_won].to_i
     end
     return total_ld
   end 
@@ -32,7 +32,7 @@ module UserRoundsHelper
   def total_splits 
     total_splits = 0
     @user_rounds.each do |rounds|
-      total_splits += rounds[:splits]
+      total_splits += rounds[:splits].to_i
     end
     return total_splits
   end 
@@ -45,8 +45,8 @@ module UserRoundsHelper
     @all_kp_payouts = []
     @user_rounds.each do |user_round|
       kp_wins = user_round.kp_won
-      kp_losses = total_kp - kp_wins
-      @payout = (kp_wins * ((num_users - 1) * @per_kp)) - (kp_losses * @per_kp)
+      kp_losses = total_kp - kp_wins.to_i
+      @payout = (kp_wins.to_i * ((num_users.to_i - 1) * @per_kp.to_i)) - (kp_losses.to_i * @per_kp.to_i).to_i
       @all_kp_payouts << @payout
     end 
     @all_kp_payouts
@@ -82,8 +82,8 @@ module UserRoundsHelper
     @all_hole_payouts = []
     @user_rounds.each do |user_round|
       holes_won = user_round.holes_won
-      holes_lost = total_holes - holes_won
-      @payout = (holes_won * ((num_users - 1) * @per_hole )) - (holes_lost * @per_hole )
+      holes_lost = total_holes.to_i - holes_won.to_i
+      @payout = (holes_won.to_i * ((num_users - 1) * @per_hole.to_i )) - (holes_lost.to_i * @per_hole.to_i ).to_i
       @all_hole_payouts << @payout
     end 
     @all_hole_payouts
@@ -97,8 +97,8 @@ module UserRoundsHelper
     @all_ld_payouts = []
     @user_rounds.each do |user_round|
       ld_wins = user_round.ld_won
-      ld_losses = total_ld - ld_wins
-      payout = (ld_wins * ((num_users - 1) * @per_ld)) - (ld_losses * @per_ld)
+      ld_losses = total_ld.to_i - ld_wins.to_i
+      payout = (ld_wins.to_i * ((num_users - 1) * @per_ld.to_i)) - (ld_losses.to_i * @per_ld.to_i).to_i
       @all_ld_payouts << payout
     end 
     @all_ld_payouts
