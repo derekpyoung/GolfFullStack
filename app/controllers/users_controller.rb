@@ -13,7 +13,6 @@ class UsersController < ApplicationController
   end 
 
   def create
-    flash.clear
     u = User.new(
       name: params[:name],
       email: params[:email],
@@ -25,6 +24,7 @@ class UsersController < ApplicationController
       redirect_to "/login"
     else 
       flash[:danger] =  u.errors.full_messages
+      
     end 
      
   end
