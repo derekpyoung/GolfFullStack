@@ -24,7 +24,7 @@ class UsersController < ApplicationController
       redirect_to "/login"
     else 
       flash[:danger] =  u.errors.full_messages
-      
+      p u.errors.full_messages
     end 
      
   end
