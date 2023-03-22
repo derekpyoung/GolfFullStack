@@ -23,5 +23,4 @@ test:
 
 production:
   <<: *default
-
-  database: my_database_production
+  database: <%= ENV["DATABASE_URL"] %>

@@ -7,7 +7,6 @@ class User < ApplicationRecord
   validates :email, presence: true
   has_secure_password 
   validates :email, presence: true, uniqueness: true
-  validates :name, uniqueness: { case_sensitive: false }
   validates :email, uniqueness: { case_sensitive: false }
 
   def downcase_name
