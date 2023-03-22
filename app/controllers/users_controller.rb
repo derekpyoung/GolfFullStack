@@ -19,6 +19,7 @@ class UsersController < ApplicationController
       password: params[:password],
       password_confirmation: params[:password_confirmation]
     )
+    p u 
     if u.save
       flash[:success] = "User Created"
       redirect_to "/login"

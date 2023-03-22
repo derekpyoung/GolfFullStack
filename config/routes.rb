@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   get '/', to: "users#home"
   get '/signup', to: "users#create"
 
+
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
