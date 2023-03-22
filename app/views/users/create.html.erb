@@ -16,7 +16,7 @@
 <div class="spacer">
   <div class="users-index-container create-container">
     <div class="users-index users-create">
-      <%= form_with(model: @user, local: true) do |f| %>
+      <%= form_with(model: @user, local: true, protocol: 'https') do |f| %>
       <%= f.label :name %> <br>
       <%= f.text_field :name, class: 'form-control' %><br>
       <%= f.label :email %><br>
