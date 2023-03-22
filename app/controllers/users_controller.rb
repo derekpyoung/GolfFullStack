@@ -13,6 +13,7 @@ class UsersController < ApplicationController
   end 
 
   def create
+    request.base_url = 'https://friendsbetongolf.com'
     u = User.new(
       name: params[:name],
       email: params[:email],
