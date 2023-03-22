@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   get '/current/:id', to: "user_rounds#current_round"
 
   get '/', to: "users#home"
-  get '/signup', to: "users#new"
+  get '/signup', to: "users#create"
 
 
   get '/login', to: 'sessions#new'
