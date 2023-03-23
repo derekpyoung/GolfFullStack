@@ -6,6 +6,13 @@
   font-family: 'Roboto', sans-serif;
 }
 
+h2 {
+  color: black;
+}
+
+h1 {
+  color: black
+}
 
 body {
   background: rgb(217, 228, 217);
@@ -41,6 +48,11 @@ body {
 .navbar-brand {
   border-radius: 15px;
   padding: 5px;
+
+}
+
+.custom-nav {
+  /* background-color: rgb(100, 134, 100) !important; */
 }
 
 .navbar-nav a:hover {
@@ -188,14 +200,85 @@ h1 {
   background-image: linear-gradient(to bottom, whitesmoke, rgb(216, 213, 213), whitesmoke);
   box-shadow: .1rem .2rem rgb(134, 133, 133);
   border: 1px solid black;
-  width: 50%;
+  width: 85%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
   padding: 1rem;
   border-radius: 10px;
 }
 
+.login-signup-box {
+  display: flex;
+  flex-direction: row;
+  padding: 2rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.login-box {
+  margin: 0 auto;
+}
+
+.signup-box {
+  margin: 0 auto;
+}
+
+.calc-5 {
+  margin-bottom: .5rem;
+  padding-bottom: .5rem;
+}
+
+.home-container {
+  flex: 1;
+}
+
+.page {
+  height: 81vh;
+}
+
+.btn-signup {
+  margin: 0 auto;
+  width: auto;
+  border: 1px solid rgb(113, 153, 113);
+  background-color: rgb(113, 153, 113);
+  color: black;
+}
+
+.btn-login {
+  margin: 0 auto;
+  border: 1px solid rgb(113, 153, 113);
+  width: auto;
+  background-color: rgb(113, 153, 113);
+  color: black;
+}
+
+.btn-login:hover {
+  background-color: #a1c79a;
+  border: 1px solid #a1c79a;
+}
+
+.btn-signup:hover {
+  background-color: #a1c79a;
+  border: 1px solid #a1c79a;
+}
+
+
+
+.signup-box {
+  /* margin: 0 auto;
+  height: 2rem;
+  border-radius: 5px;
+  border: 1px solid grey;
+  justify-content: center; */
+
+}
+
 .sign-up a {
+  /* display: flex;
+  flex-direction: row;
   color: green;
-  text-decoration: none;
+  text-decoration: none; */
 }
 
 .users-index {

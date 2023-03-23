@@ -1,17 +1,18 @@
 
-<div class="spacer">
-<h2 class="center">Golfers</h2>
-<br>
-<table class="basic-table">
-  <tr>
-    <th>Players</th>
-  </tr>
-  <% @users.each do |user| %>
-  <tr>
-    <td class="user-links"><a href="/users/<%= user.id %>"><%= user.name.capitalize %></a></td> 
-  </tr>
-<% end %>
-  </table>
-  <br><br>
-  
+<div class="spacer page">
+  <h2 class="center">Golfers</h2>
+  <br>
+  <table class="basic-table">
+    <tr>
+      <th>Players</th>
+    </tr>
+    <% @users.each do |user| %>
+    <tr>
+      <td class="user-links"><a href="/users/<%= user.id %>"><%= user.name.capitalize %></a></td> 
+    </tr>
+  <% end %>
+    </table>
+    <br><br>
+    <div class="">
+    </div>
 </div> 
