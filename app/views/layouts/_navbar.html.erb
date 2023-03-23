@@ -11,15 +11,15 @@
           <a class="nav-link active" aria-current="page" href="/login">Login</a>
         </li>
         <%end%>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/users">Golfers</a>
-        </li>
         <% if current_user %>
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="/user_rounds">Join a Round</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="/rounds">Rounds</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/users">Golfers</a>
         </li>
         <%end%>
         <% if current_user %>
