@@ -12,7 +12,9 @@ body {
   /* background: radial-gradient(circle, rgb(217, 228, 217) 0%, rgba(132, 172, 132, 1) 100%); */
   background-color: rgb(93, 124, 93);
   min-height: 100vh;
+  margin-bottom: -50px;
 }
+
 
 .create-round {
   display: flex;
@@ -29,6 +31,10 @@ body {
   width: 40%;
   justify-content: center;
   text-align: center;
+}
+
+.nav-item a {
+  text-align: end !important;
 }
 
 
@@ -171,6 +177,7 @@ h1 {
 
 .fbog-h1 {
   font-weight: 400;
+  text-shadow: 3px 1px 1px grey;
   font-size: 10vw;
   color: green;
 
@@ -408,7 +415,6 @@ footer {
   bottom: 0;
   display: flex;
   flex-direction: row;
-  justify-content: baseline;
 }
 
 .container-footer {
