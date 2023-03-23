@@ -1,6 +1,6 @@
 
 <div class="spacer">
-<h2 class="center">Users</h2>
+<h2 class="center">Golfers</h2>
 <br>
 <table class="basic-table">
   <tr>
@@ -8,7 +8,7 @@
   </tr>
   <% @users.each do |user| %>
   <tr>
-    <td><a href="/users/<%= user.id %>"><%= user.name.capitalize %></a></td> 
+    <td class="user-links"><a href="/users/<%= user.id %>"><%= user.name.capitalize %></a></td> 
   </tr>
 <% end %>
   </table>

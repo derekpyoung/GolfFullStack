@@ -14,7 +14,7 @@
   </tr>
   <% @u.user_rounds.reverse.each do |user| %>
     <tr>
-      <td><a href="/current/<%= user.round_id %>"><%= user.round.course.capitalize %></td>
+      <td class="golfer-links"><a href="/current/<%= user.round_id %>"><%= user.round.course.capitalize %></td>
       <td><%=user.round_id%></td>
       <td><%= user.holes_won%></td>
       <td><%= user.kp_won%></td>

@@ -17,9 +17,9 @@
   <thead>
     <tr>
       <th>Player</th>
+      <th>Holes</th>
       <th>Closest</th>
       <th>Longest</th>
-      <th>Holes</th>
       <th>Splits</th>
       <th>Score</th>
     </tr>
@@ -28,9 +28,9 @@
     <% @user_rounds.each do |user_round| %>
   <tr>
     <td><%= user_round.user.name.capitalize %></td>
+    <td><%= user_round.holes_won %></td>
     <td><%= user_round.kp_won %></td>
     <td><%= user_round.ld_won %></td>
-    <td><%= user_round.holes_won %></td>
     <td><%= user_round.splits %></td>
     <td><%=user_round.score %></td>
    
@@ -59,9 +59,9 @@
     <tr>
       <th>Player</th>
       <th>Total</th>
+      <th>Holes pay</th>
       <th>Closest pay</th>
       <th>Longest pay</th>
-      <th>Holes pay</th>
       <th>Splits pay</th>
     </tr>
   </thead>
@@ -70,9 +70,9 @@
       <tr>
         <td><%= user_round.user.name.capitalize %></td>
         <td width="23%">$<%= @all_kp_payouts[index] + @all_ld_payouts[index] + @all_hole_payouts[index] + @all_split_payout[index] %></td>
+        <td>$<%= @all_hole_payouts[index] %></td>
         <td>$<%= @all_kp_payouts[index] %></td>
         <td>$<%= @all_ld_payouts[index]%></td>
-        <td>$<%= @all_hole_payouts[index] %></td>
         <td>$<%= @all_split_payout[index] %></td>
       </tr>
     <% end %>

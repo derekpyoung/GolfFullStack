@@ -16,7 +16,7 @@
   <p> <%= f.label :round_id %>
   
      <div data-controller="course">
-        <%= f.select :round_id, options_for_select(@round.reverse.map{ |r| ["#{r.course.capitalize} (#{r.created_at.strftime('%m/%d/%Y')})", r.id] }), {prompt: "Select a Round"}, {class: 'form-select'} %>
+        <%= f.select :round_id, options_for_select(@round.reverse.map{ |r| ["#{r.course.capitalize} (#{r.created_at.strftime('%m/%d/%Y')})", r.id] }), {prompt: "Select a Round"}, {class: 'form-select text-center'} %>
 
 
       </div>
