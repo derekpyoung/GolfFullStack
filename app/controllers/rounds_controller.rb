@@ -15,6 +15,9 @@ class RoundsController < ApplicationController
     if r.save
       flash[:success] = "Round Created"
       redirect_to "/rounds"
+    else 
+      flash[:warning] = "Enter valid bets"
+      redirect_to "/rounds"
     end 
   end 
 

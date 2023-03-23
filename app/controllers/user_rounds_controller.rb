@@ -24,10 +24,15 @@ class UserRoundsController < ApplicationController
       ur.round_id = params[:round_id] 
       ur.holes_won = params[:holes_won]
       ur.kp_won = params[:kp_won] 
-      ur.ld_won = params[:ld_won] 
-      ur.splits = params[:splits] 
+      ur.ld_won = params[:ld_won]
+      if params[:splits] == nil
+        ur.splits = 0
+      else 
+        ur.splits = params[:splits]
+      end 
       ur.score = params[:score] 
       if ur.save
+        p ur 
         flash[:success] = "Round entered"
         redirect_to "/user_rounds"
       else 

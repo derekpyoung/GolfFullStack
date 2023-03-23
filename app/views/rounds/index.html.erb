@@ -1,4 +1,4 @@
-<h1 class="center" >Rounds</h1>
+
 
 <div class="spacer">
 <% flash.each do |key, value| %>
@@ -7,45 +7,23 @@
     <%= value %>
    </div>
 <% end %>
-  <table class="basic-table rounds-table" >
-    <tr>
-      <th>Round </th>
-      <th>Course</th>
-      <th>Bet per Hole</th>
-      <th>Closest to Pin</th>
-      <th>Longest Drive Bet</th>
-      
-    </tr>
-    <% @round.reverse.each do |round| %>
-      <tr>
-        <td><%= round.id %> </td>
-        <td><a href="/current/<%=round.id%>"><%=round.course.capitalize%></a></td>
-        <td><%=round.bet_per_hole %>$</td>
-        <td><%=round.bet_per_kp %>$</td>
-        <td><%=round.bet_per_ld %>$</td>
-      </tr>
-      <% end %>
-  </table>
-  
-  <br>
+<br>
   <h3 class="center" >Create New Round</h3>
   <br>
-
-
   <div class="create-round row">
     <div class="rounds-input">
       <%= form_with model: @rounds , local: true  do |f| %>
       <p> <%= f.label :course %>
-      <%= f.text_field :course, class: 'form-control', placeholder: "Course"%>  </p>
+      <%= f.text_field :course, class: 'form-control text-center', placeholder: "Course"%>  </p>
 
     <p> <%= f.label :per_hole_bet %> 
-      <%= f.text_field :bet_per_hole, class: 'form-control', placeholder: "$"%> </p>
+      <%= f.text_field :bet_per_hole, class: 'form-control text-center', placeholder: "$"%> </p>
 
     <p> <%= f.label :closest_to_pin_bet %>
-      <%= f.text_field :bet_per_kp, class: 'form-control',placeholder: "$" %> </p>
+      <%= f.text_field :bet_per_kp, class: 'form-control text-center',placeholder: "$" %> </p>
 
     <p>  <%= f.label :longest_drive_bet %>
-      <%= f.text_field :bet_per_ld, class: 'form-control',placeholder: "$" %> </p>
+      <%= f.text_field :bet_per_ld, class: 'form-control text-center',placeholder: "$" %> </p>
 
     
       <%= f.submit "Submit", class: "btn btn-primary btn-round" %>
@@ -54,4 +32,33 @@
     </div>
   </div>
 </div>
+<br>
+<br> 
+<h2 class="center">Rounds</h2>
+<br>
+  <table class="basic-table rounds-table" >
+    <tr>
+      <th>Round </th>
+      <th>Course</th>
+      <%# <th>Bet per Hole</th>
+      <th>Closest to Pin</th>
+      <th>Longest Drive Bet</th> %>
+      <th>Date</th>
+      
+    </tr>
+    <% @round.reverse.each do |round| %>
+      <tr>
+        <td><%= round.id %> </td>
+        <td><a href="/current/<%=round.id%>"><%=round.course.capitalize%></a></td>
+        <%# <td><%=round.bet_per_hole %>
+        <%# <td><%=round.bet_per_kp %>
+        <%# <td><%=round.bet_per_ld %>
+        <td><%=round.created_at.strftime('%m/%d/%Y') %></td>
+      </tr>
+      <% end %>
+  </table>
+  
+  
+
+
 <br><br>

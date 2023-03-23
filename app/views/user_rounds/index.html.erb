@@ -25,20 +25,20 @@
   <%# <p> <%= f.label :name %> 
     <%# <%= f.text_field :name, class: 'form-control' %> </p> 
 
-  <p>  <%= f.label :holes  %>
+  <p>  <%= f.label :holes_won   %>
     <%= f.text_field :holes_won, class: 'form-control' %> </p>
 
-   <p> <%= f.label :Longest %> 
+   <p> <%= f.label :Longest_drives %> 
     <%= f.text_field :ld_won, class: 'form-control' %> </p>
 
-  <p>  <%= f.label :Closest %>
+  <p>  <%= f.label :Closest_to_pin %>
     <%= f.text_field :kp_won, class: 'form-control' %> </p>
 
   <p>  <%= f.label :splits %>
     <%= f.text_field :splits, class: 'form-control' %> </p>
-  <p>  <%= f.label :score %>
+  <p>  <%= f.label :round_score %>
     <%= f.text_field :score, class: 'form-control' %> </p>
-    <%= f.submit "Submit Round", class: "center btn btn-primary" %>
+    <%= f.submit "Submit", class: "center btn btn-primary" %>
 
   <% end %>
   </div>
@@ -61,18 +61,20 @@
       <tr>
         <th>Name</th>
         <th>Course</th>
-        <th>Holes Won</th>
+        <%# <th>Holes Won</th>
         <th>Closest To </th>
-        <th>Longest drive</th>
+        <th>Longest drive</th> %>
+        <th>Date</th>
         <th>Score</th>
       </tr>
         <% @user_round.reverse.each do |user_round| %>
           <tr >
             <td><%= user_round.user.name.capitalize  %></td>
             <td><a href="/current/<%=user_round.round.id%>"><%= user_round.round.course.capitalize %></a> </td>
-            <td><%= user_round.holes_won %></td>
-            <td><%= user_round.kp_won %></td>
-            <td><%= user_round.ld_won %></td>
+            <%# <td><%= user_round.holes_won %></td> 
+            <%# <td><%= user_round.kp_won %></td> 
+            <%# <td><%= user_round.ld_won %></td> 
+            <td> <%=user_round.created_at.strftime('%m/%d/%Y') %> </td>
             <td><%= user_round.score %></td>
           </tr>
         <% end %>

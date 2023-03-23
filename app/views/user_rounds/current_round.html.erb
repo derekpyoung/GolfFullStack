@@ -51,7 +51,7 @@
 
 
 
-<h4 class="center">Payouts  </h4> 
+<h4 class="center payouts-table">Payouts  </h4> 
 <br>
 
 <table>
@@ -69,11 +69,11 @@
     <% @user_rounds.each_with_index do |user_round, index| %>
       <tr>
         <td><%= user_round.user.name.capitalize %></td>
-        <td width="20%"><%= @all_kp_payouts[index] + @all_ld_payouts[index] + @all_hole_payouts[index] + @all_split_payout[index] %>$</td>
-        <td><%= @all_kp_payouts[index] %>$</td>
-        <td><%= @all_ld_payouts[index]%>$</td>
-        <td><%= @all_hole_payouts[index] %>$</td>
-        <td><%= @all_split_payout[index] %>$</td>
+        <td width="23%">$<%= @all_kp_payouts[index] + @all_ld_payouts[index] + @all_hole_payouts[index] + @all_split_payout[index] %></td>
+        <td>$<%= @all_kp_payouts[index] %></td>
+        <td>$<%= @all_ld_payouts[index]%></td>
+        <td>$<%= @all_hole_payouts[index] %></td>
+        <td>$<%= @all_split_payout[index] %></td>
       </tr>
     <% end %>
   </tbody>

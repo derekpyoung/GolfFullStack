@@ -76,8 +76,15 @@ h1 {
   color: #1a7d09;
 }
 
+
+
 .user-round-table a:hover {
   color: #082503;
+}
+
+.logo-nav {
+  height: 1.2rem;
+
 }
 
 .golf-cup {
