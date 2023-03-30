@@ -1,9 +1,3 @@
-@media (max-width: 768px) {
-  .golf-image {
-    background-image: url('golfCup-m.jpg');
-  }
-}
-
 * {
   margin: 0;
   padding: 0;
