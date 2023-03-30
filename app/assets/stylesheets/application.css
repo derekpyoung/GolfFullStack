@@ -114,17 +114,22 @@ h1 {
 
 }
 
+
 .golf-cup {
   margin-top: 0;
   width: 100vw;
+  background-position: center center;
   height: 4.3rem;
+  object-fit: cover;
+  background-image: url('./golfCup.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-.golf-image {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  transform: translateY(-35%);
+@media only screen and (max-width: 767px) {
+  .golf-image {
+    background-image: url('./golfCup-m.jpg');
+  }
 }
 
 .user-rounds-input-container {
