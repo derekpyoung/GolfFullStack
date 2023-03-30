@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   delete '/users/":id"', to: "users#delete"
 
 
+
+
   get "/rounds", to: 'rounds#index'
   get '/rounds/:id', to: 'rounds#show'
   post '/rounds', to: "rounds#create"

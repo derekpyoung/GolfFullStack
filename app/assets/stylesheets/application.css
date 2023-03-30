@@ -1,4 +1,8 @@
-@media (max-width: 812px) {}
+@media (max-width: 768px) {
+  .golf-image {
+    background-image: url('golfCup-m.jpg');
+  }
+}
 
 * {
   margin: 0;
@@ -53,6 +57,7 @@ body {
 
 .custom-nav {
   /* background-color: rgb(100, 134, 100) !important; */
+  width: 100vw;
 }
 
 .navbar-nav a:hover {
@@ -90,9 +95,9 @@ h1 {
 
   margin: auto;
   text-align: center;
-  -webkit-box-shadow: 10px 13px 5px 0px rgba(153, 153, 153, 0.22);
-  -moz-box-shadow: 10px 13px 5px 0px rgba(153, 153, 153, 0.22);
-  box-shadow: 10px 13px 5px 0px rgba(153, 153, 153, 0.22);
+  -webkit-box-shadow: 5px 7px 5px 0px rgba(153, 153, 153, 0.22);
+  -moz-box-shadow: 5px 7px 5px 0px rgba(153, 153, 153, 0.22);
+  box-shadow: 5px 7px 5px 0px rgba(153, 153, 153, 0.22);
 }
 
 .user-round-table a {
@@ -329,11 +334,11 @@ table th {
 
 .user-round-table {
   align-items: center;
-  width: 99vw;
   column-width: auto;
   border-radius: 15px;
   overflow: hidden;
-  max-width: 99vw;
+  max-width: 85vw;
+  width: 75vw;
   margin-bottom: 4rem;
   overflow: hidden;
 }
@@ -382,10 +387,40 @@ table th {
 }
 
 .rounds-table {
-  min-width: 100%;
+  min-width: 85%;
   border-radius: 15px;
-  padding: 1rem;
+  padding: 0;
   margin: auto;
+  border-spacing: 0;
+}
+
+.rounds-table th:first-child {
+  border-top-left-radius: 15px;
+
+}
+
+.rounds-table th:last-child {
+  border-top-right-radius: 15px;
+
+}
+
+.rounds-table th:first-child {
+  border-top-left-radius: 15px;
+
+}
+
+.rounds-table th:last-child {
+  border-top-right-radius: 15px;
+
+}
+
+.rounds-table td:first-child {
+  border-bottom-left-radius: 15px;
+
+}
+
+.rounds-table td:last-child {
+  border-bottom-right-radius: 15px;
 }
 
 .rounds-table td a {
@@ -399,7 +434,6 @@ table th {
 }
 
 .users-show {
-
   padding: 2rem;
   margin: 0 auto;
   table-layout: fixed;
@@ -427,7 +461,22 @@ table th {
   font-size: 2vw;
 }
 
-.users-show a {
+.users-index-table {
+  border-radius: 15px;
+  padding: 0;
+}
+
+.users-index-table th {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.users-index-table td:last-child {
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.users-index-table .users-show a {
   text-decoration: none;
   font-weight: 900;
   color: #03339b;
