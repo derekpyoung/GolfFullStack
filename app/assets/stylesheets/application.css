@@ -126,8 +126,8 @@ h1 {
   background-size: cover;
 }
 
-@media only screen and (max-width: 767px) {
-  .golf-image {
+@media only screen and (max-width: 900px) {
+  .golf-cup {
     background-image: url('./golfCup-m.jpg');
   }
 }
