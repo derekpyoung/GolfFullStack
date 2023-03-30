@@ -12,6 +12,56 @@ h1 {
   color: black
 }
 
+
+.current-table-scores th,
+td {
+  padding: .4rem;
+}
+
+.current-table-scores th:last-child {
+  border-top-right-radius: 15px;
+}
+
+.current-table-scores th:first-child {
+  border-top-left-radius: 15px;
+}
+
+.current-table-scores td:first-child {
+  border-bottom-left-radius: 15px;
+}
+
+.current-table-scores td:last-child {
+  border-bottom-right-radius: 15px;
+}
+
+.payouts-table-current {
+  width: 85%;
+  border-radius: 15px;
+  border-collapse: separate;
+}
+
+.payouts-table-current td {
+  line-height: 2.2rem;
+
+}
+
+.payouts-table-current td:last-child {
+  border-bottom-right-radius: 15px !important;
+}
+
+.payouts-table-current td:first-child {
+  border-bottom-left-radius: 15px !important;
+}
+
+.payouts-table-current th:first-child {
+  border-top-left-radius: 15px !important;
+}
+
+.payouts-table-current th:last-child {
+  border-top-right-radius: 15px !important;
+}
+
+
 body {
   background: rgb(217, 228, 217);
   /* background: radial-gradient(circle, rgb(217, 228, 217) 0%, rgba(132, 172, 132, 1) 100%); */
@@ -203,16 +253,14 @@ h1 {
 }
 
 .sign-up {
-  /* background-color: whitesmoke; */
   background-image: linear-gradient(to bottom, whitesmoke, rgb(216, 213, 213), whitesmoke);
   box-shadow: .1rem .2rem rgb(134, 133, 133);
   border: 1px solid black;
   width: 85%;
   height: auto;
-  display: flex;
-  flex-direction: row;
+  margin: auto;
   padding: 1rem;
-  border-radius: 10px;
+  border-radius: 15px;
 }
 
 .login-signup-box {
@@ -242,6 +290,9 @@ h1 {
 
 .page {
   height: 81vh;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .btn-signup {
@@ -268,24 +319,6 @@ h1 {
 .btn-signup:hover {
   background-color: #a1c79a;
   border: 1px solid #a1c79a;
-}
-
-
-
-.signup-box {
-  /* margin: 0 auto;
-  height: 2rem;
-  border-radius: 5px;
-  border: 1px solid grey;
-  justify-content: center; */
-
-}
-
-.sign-up a {
-  /* display: flex;
-  flex-direction: row;
-  color: green;
-  text-decoration: none; */
 }
 
 .users-index {
@@ -315,7 +348,6 @@ table {
   font-weight: bold;
   border-radius: 15px;
 }
-
 
 table tr:nth-child(odd) {
   background-color: rgb(240, 231, 218);
@@ -373,8 +405,6 @@ table th {
 
 .sign-up {
   display: block;
-  justify-content: center;
-  align-items: center;
   text-align: center;
 }
 
@@ -498,14 +528,10 @@ table th {
   text-decoration: none;
 }
 
-
 .spacer {
   width: 100%;
   padding: 1rem;
-
 }
-
-
 
 .img-container {
   background-image: url("https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80");
@@ -529,15 +555,11 @@ table th {
   margin-top: 10px;
 }
 
-
-
-
 .col-lg-6 {
   padding-top: 0;
   text-align: center;
   width: 100vw;
 }
-
 
 footer {
   margin-top: 1em;
