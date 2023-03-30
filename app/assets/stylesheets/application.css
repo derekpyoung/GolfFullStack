@@ -116,7 +116,7 @@ h1 {
 
 
 .golf-cup {
-  margin-top: 0;
+  margin-top: -30px;
   width: 100vw;
   background-position: center center;
   height: 4.3rem;
@@ -126,7 +126,7 @@ h1 {
   background-size: cover;
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 600px) {
   .golf-image {
     background-image: url('./golfCup-m.jpg');
   }
