@@ -37,7 +37,7 @@ td {
 .payouts-table-current {
   width: 85%;
   border-radius: 15px;
-  border-collapse: separate;
+
 }
 
 .payouts-table-current td {
@@ -114,6 +114,7 @@ body {
 
 .page-header {
   text-align: center;
+
 }
 
 .form-control {
