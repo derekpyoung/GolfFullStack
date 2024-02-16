@@ -290,6 +290,7 @@ footer {
   margin: auto;
   padding: 1rem;
   border-radius: 15px;
+  font-weight: bold;
 }
 
 .login-signup-box {
