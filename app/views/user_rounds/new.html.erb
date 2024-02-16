@@ -22,18 +22,18 @@
     <%= f.text_field :name, class: 'form-control' %> </p>
 
   <p>  <%= f.label :holes  %>
-    <%= f.text_field :holes_won, class: 'form-control' %> </p>
+    <%= f.number_field :holes_won, class: 'form-control' %> </p>
 
    <p> <%= f.label :Longest %> 
-    <%= f.text_field :ld_won, class: 'form-control' %> </p>
+    <%= f.number_field :ld_won, class: 'form-control' %> </p>
 
   <p>  <%= f.label :Closest %>
-    <%= f.text_field :kp_won, class: 'form-control' %> </p>
+    <%= f.number_field :kp_won, class: 'form-control' %> </p>
 
   <p>  <%= f.label :splits %>
-    <%= f.text_field :splits, class: 'form-control' %> </p>
+    <%= f.number_field :splits, class: 'form-control' %> </p>
   <p>  <%= f.label :score %>
-    <%= f.text_field :score, class: 'form-control' %> </p>
+    <%= f.number_field :score, class: 'form-control' %> </p>
     <%= f.submit "Submit Round", class: "center btn btn-primary" %>
   <% end %>
   </div>
