@@ -89,6 +89,7 @@ body {
   width: 40%;
   justify-content: center;
   text-align: center;
+  font-weight: bolder;
 }
 
 .nav-item a {
@@ -102,9 +103,17 @@ body {
   font-weight: 500;
 }
 
+.navbar-light {
+  font-weight: bold;
+}
+
 .navbar-light .navbar-brand {
 
   font-weight: bolder;
+}
+
+.navbar-light .navbar-brand:hover {
+  color: rgb(100, 134, 100)
 }
 
 .custom-nav {
@@ -139,18 +148,25 @@ h1 {
   flex-wrap: nowrap;
 }
 
+.details {
+  font-weight: bold;
+}
 
+#navbar-text {
+  font-weight: bold;
+}
 
 .user-rounds-input {
   width: 65%;
-  /* border: 3px solid green; */
+  border: none;
   border-radius: 5px;
-
+  background-color: rgb(93, 124, 93);
   margin: auto;
   text-align: center;
-  -webkit-box-shadow: 5px 7px 5px 0px rgba(153, 153, 153, 0.22);
+  font-weight: bold;
+  /* -webkit-box-shadow: 5px 7px 5px 0px rgba(153, 153, 153, 0.22);
   -moz-box-shadow: 5px 7px 5px 0px rgba(153, 153, 153, 0.22);
-  box-shadow: 5px 7px 5px 0px rgba(153, 153, 153, 0.22);
+  box-shadow: 5px 7px 5px 0px rgba(153, 153, 153, 0.22); */
 }
 
 .user-round-table a {
