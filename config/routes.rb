@@ -7,7 +7,6 @@ Rails.application.routes.draw do
 
 
 
-
   get "/rounds", to: 'rounds#index'
   get '/rounds/:id', to: 'rounds#show'
   post '/rounds', to: "rounds#create"
