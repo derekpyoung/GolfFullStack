@@ -16,7 +16,7 @@
   <p> <%= f.label :round_id %>
   
      <div data-controller="course">
-        <%= f.select :round_id, options_for_select(@round.reverse.map{ |r| ["#{r.course.capitalize} (#{r.created_at.strftime('%m/%d/%Y')})", r.id] }), {prompt: "Select a Round"}, {class: 'form-select text-center'} %>
+        <%= f.select :round_id, options_for_select(@round.reverse.map{ |r| ["#{r.course.capitalize} (#{r.created_at.strftime('%m/%d/%Y')})", r.id] }), {prompt: "Select your round"}, {class: 'form-select text-center'} %>
 
 
       </div>
@@ -26,18 +26,18 @@
     <%# <%= f.text_field :name, class: 'form-control' %> </p> 
 
   <p>  <%= f.label :holes_won   %>
-    <%= f.text_field :holes_won, class: 'form-control' %> </p>
+    <%= f.text_field :holes_won, class: 'form-control center' %> </p>
 
    <p> <%= f.label :Longest_drives %> 
-    <%= f.text_field :ld_won, class: 'form-control' %> </p>
+    <%= f.text_field :ld_won, class: 'form-control center' %> </p>
 
   <p>  <%= f.label :Closest_to_pin %>
-    <%= f.text_field :kp_won, class: 'form-control' %> </p>
+    <%= f.text_field :kp_won, class: 'form-control center' %> </p>
 
   <p>  <%= f.label :splits %>
-    <%= f.text_field :splits, class: 'form-control' %> </p>
+    <%= f.text_field :splits, class: 'form-control center' %> </p>
   <p>  <%= f.label :round_score %>
-    <%= f.text_field :score, class: 'form-control' %> </p>
+    <%= f.text_field :score, class: 'form-control center' %> </p>
     <%= f.submit "Submit", class: "center btn btn-primary" %>
 
   <% end %>
