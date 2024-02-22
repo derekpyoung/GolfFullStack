@@ -633,6 +633,9 @@ footer {
   margin: .2rem;
 }
 
+.quick {
+  width: 40%;
+}
 
 .end {
   width: 100%;
