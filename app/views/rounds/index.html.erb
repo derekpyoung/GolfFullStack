@@ -12,7 +12,7 @@
   <br>
   <div class="create-round row">
     <div class="rounds-input">
-      <%= form_with model: @rounds , local: true  do |f| %>
+      <%= form_with model: @round, local: true do |f| %>
       <p> <%= f.label :course %>
       <%= f.text_field :course, class: 'form-control text-center', placeholder: "Course"%>  </p>
 
@@ -46,7 +46,7 @@
       <th>Date</th>
       
     </tr>
-    <% @round.reverse.each do |round| %>
+    <% @rounds.reverse.each do |round| %>
       <tr>
         <td><%= round.id %> </td>
         <td><a href="/current/<%=round.id%>"><%=round.course.capitalize%></a></td>

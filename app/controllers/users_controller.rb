@@ -1,46 +1,62 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+
   def index
     @users = User.all
   end
 
-  def show 
-    id = params[:id]
-    @u = User.find_by(id: id)
+  def show
   end
 
-  def home 
+  def home
     render "users/home"
-  end 
+  end
+
+  def new
+    @user = User.new
+  end
 
   def create
-    u = User.new(
-      name: params[:name],
-      email: params[:email],
-      password: params[:password],
-      password_confirmation: params[:password_confirmation]
-    )
-    p u 
-    if u.save
+    @user = User.new(user_params)
+    if @user.save
       flash[:success] = "User Created"
-      redirect_to "/login"
-    else 
-      flash[:danger] =  u.errors.full_messages
-      p u.errors.full_messages
-    end 
-     
+      redirect_to login_path
+    else
+      flash[:danger] = @user.errors.full_messages
+      render :new, status: :unprocessable_entity
+    end
   end
 
-  def destroy
-    render json: "users destroy"
+  def edit
   end
 
   def update
-    u = User.find_by(id: params[:id])
-    u.name = params[:name] || u.name
-    u.email = params[:email] || u.email
-    u.password_digest = params[:password_digest] || u.password_digest
-    u.save 
-    render template: "users/update"
+    if @user.update(user_update_params)
+      flash[:success] = "User updated successfully"
+      redirect_to @user
+    else
+      flash[:danger] = @user.errors.full_messages
+      render :edit, status: :unprocessable_entity
+    end
+  end
 
+  def destroy
+    @user.destroy
+    flash[:success] = "User deleted successfully"
+    redirect_to users_path
+  end
+
+  private
+
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  def user_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
+  def user_update_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
   end
 end

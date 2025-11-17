@@ -19,13 +19,12 @@
   </head>
 
   <body>
-    <div class="background-img">
-      <%= render 'layouts/navbar'%>
-      <br>
+    <%= render 'layouts/navbar'%>
+    <main>
       <%= yield %>
-    </div>
+    </main>
+    <footer>
+      <%= render 'layouts/footer'%>
+    </footer>
   </body>
-  <footer>
-  <%= render 'layouts/footer'%>
-  </footer>
 </html>

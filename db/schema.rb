@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_25_170059) do
+ActiveRecord::Schema[7.0].define(version: 2025_11_17_000000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -33,6 +33,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_25_170059) do
     t.integer "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["round_id"], name: "index_user_rounds_on_round_id"
+    t.index ["user_id"], name: "index_user_rounds_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -41,6 +43,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_25_170059) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "user_rounds", "rounds"
+  add_foreign_key "user_rounds", "users"
 end

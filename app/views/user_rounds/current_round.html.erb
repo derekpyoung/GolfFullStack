@@ -1,80 +1,72 @@
 <%get_course_details%>
-    <h1 class="center details"><%= @round_id %>  </h1>
-    <h1 class="center details"><%=@round.course.capitalize %> </h1> 
-    <h6 class="center details"><%= @round.created_at.strftime("%B %d, %Y") %> </h6> 
-    <br>
-    <h4 class="center details"> Wagers</h4>
-    <br>
-    <p class="center details">Per Hole: $<%=@round.bet_per_hole %><p>
-    <p class="center details">Per Closest to Pin: $<%=@round.bet_per_kp %><p>
-    <p class="center details">Per Longest off Tee: $<%=@round.bet_per_ld %><p>
-    <h4 class="center details">Scores</h4>
-    <br>
-  
+    <div class="round-header">
+      <h1 class="round-title"><%=@round.course.capitalize %></h1>
+      <p class="round-date"><%= @round.created_at.strftime("%B %d, %Y") %></p>
+    </div>
 
+    <div class="wagers-container">
+      <div class="wager-item">
+        <span class="wager-label">Per Hole</span>
+        <span class="wager-value">$<%=@round.bet_per_hole %></span>
+      </div>
+      <div class="wager-divider">•</div>
+      <div class="wager-item">
+        <span class="wager-label">Closest to Pin</span>
+        <span class="wager-value">$<%=@round.bet_per_kp %></span>
+      </div>
+      <div class="wager-divider">•</div>
+      <div class="wager-item">
+        <span class="wager-label">Longest Drive</span>
+        <span class="wager-value">$<%=@round.bet_per_ld %></span>
+      </div>
+    </div>
 
-<table class="current-table-scores">
-  <thead>
-    <tr>
-      <th>Player</th>
-      <th>Holes</th>
-      <th>Closest</th>
-      <th>Longest</th>
-      <th>Splits</th>
-      <th>Score</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @user_rounds.each do |user_round| %>
-  <tr>
-    <td><%= user_round.user.name.capitalize %></td>
-    <td><%= user_round.holes_won %></td>
-    <td><%= user_round.kp_won %></td>
-    <td><%= user_round.ld_won %></td>
-    <td><%= user_round.splits %></td>
-    <td><%=user_round.score %></td>
-   
-
-  </tr>
-<% end %>
-
-    </tbody>
-</table>
-<br>
-
+    <h4 class="section-title">Round Results</h4>
 
 <%kp_payout(total_kp)%>
 <% hole_payout(total_holes)%>
 <% ld_payout(total_ld)%>
 <% get_splits_pay %>
 
-
-
-
-<h4 class="center payouts-table">Payouts  </h4> 
-<br>
-
-<table class="payouts-table-current">
-  <thead>
-    <tr>
-      <th>Player</th>
-      <th>Total</th>
-      <th>Holes pay</th>
-      <th>Closest pay</th>
-      <th>Longest pay</th>
-      <th>Splits pay</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @user_rounds.each_with_index do |user_round, index| %>
+<div class="table-responsive">
+  <table class="round-results-table">
+    <thead>
       <tr>
-        <td><%= user_round.user.name.capitalize %></td>
-        <td width="23%">$<%= @all_kp_payouts[index] + @all_ld_payouts[index] + @all_hole_payouts[index] + @all_split_payout[index] %></td>
-        <td>$<%= @all_hole_payouts[index] %></td>
-        <td>$<%= @all_kp_payouts[index] %></td>
-        <td>$<%= @all_ld_payouts[index]%></td>
-        <td>$<%= @all_split_payout[index] %></td>
+        <th rowspan="2" class="player-col">Player</th>
+        <th colspan="2" class="group-header">Holes</th>
+        <th colspan="2" class="group-header">Closest</th>
+        <th colspan="2" class="group-header">Longest</th>
+        <th colspan="2" class="group-header">Splits</th>
+        <th rowspan="2" class="score-col">Score</th>
+        <th rowspan="2" class="total-col">Total Pay</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tr>
+        <th class="sub-header">Won</th>
+        <th class="sub-header">Pay</th>
+        <th class="sub-header">Won</th>
+        <th class="sub-header">Pay</th>
+        <th class="sub-header">Won</th>
+        <th class="sub-header">Pay</th>
+        <th class="sub-header">Won</th>
+        <th class="sub-header">Pay</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @user_rounds.each_with_index do |user_round, index| %>
+        <tr>
+          <td class="player-name"><%= user_round.user.name.capitalize %></td>
+          <td><%= user_round.holes_won %></td>
+          <td class="payout">$<%= @all_hole_payouts[index] %></td>
+          <td><%= user_round.kp_won %></td>
+          <td class="payout">$<%= @all_kp_payouts[index] %></td>
+          <td><%= user_round.ld_won %></td>
+          <td class="payout">$<%= @all_ld_payouts[index] %></td>
+          <td><%= user_round.splits %></td>
+          <td class="payout">$<%= @all_split_payout[index] %></td>
+          <td class="score"><%= user_round.score %></td>
+          <td class="total-payout">$<%= @all_kp_payouts[index] + @all_ld_payouts[index] + @all_hole_payouts[index] + @all_split_payout[index] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

@@ -2,7 +2,7 @@
 <div class="users-show-container">
 
   <table class="basic-table table-primary users-show" style="width: 100%">
-  <h1 class="center"><%= @u.name.upcase %>'S ROUNDS</h1>
+  <h1 class="center"><%= @user.name.upcase %>'S ROUNDS</h1>
   <tr>
     <th>Course</th>
     <th>Round</th>
@@ -12,7 +12,7 @@
     <th>Splits won</th>
     <th>Score</th>
   </tr>
-  <% @u.user_rounds.reverse.each do |user| %>
+  <% @user.user_rounds.reverse.each do |user| %>
     <tr>
       <td class="golfer-links"><a href="/current/<%= user.round_id %>"><%= user.round.course.capitalize %></td>
       <td><%=user.round_id%></td>

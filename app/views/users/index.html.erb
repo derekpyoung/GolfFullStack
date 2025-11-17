@@ -1,18 +1,21 @@
+<div class="spacer">
+  <div class="page-title-section">
+    <h1 class="page-main-title">Golfers</h1>
+    <p class="page-subtitle"><%= @users.count %> player<%= @users.count != 1 ? 's' : '' %> registered</p>
+  </div>
 
-<div class="spacer page">
-  <h2 class="center">Golfers</h2>
-  <br>
-  <table class="basic-table users-index-table">
-    <tr>
-      <th>Players</th>
-    </tr>
+  <div class="users-grid">
     <% @users.each do |user| %>
-    <tr>
-      <td class="user-links"><a href="/users/<%= user.id %>"><%= user.name.capitalize %></a></td> 
-    </tr>
-  <% end %>
-    </table>
-    <br><br>
-    <div class="">
-    </div>
+      <a href="/users/<%= user.id %>" class="user-card">
+        <div class="user-avatar">
+          <%= user.name[0].upcase %>
+        </div>
+        <div class="user-info">
+          <h3 class="user-name"><%= user.name.capitalize %></h3>
+          <span class="user-rounds-count"><%= user.user_rounds.count %> rounds played</span>
+        </div>
+        <div class="user-arrow">→</div>
+      </a>
+    <% end %>
+  </div>
 </div> 

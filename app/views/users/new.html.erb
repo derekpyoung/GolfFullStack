@@ -1,0 +1,53 @@
+<% flash.each do |key, value| %>
+  <% if key == "danger" %>
+    <% if value.is_a?(Array) %>
+      <% value.each do |message| %>
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          <%= message %>
+        </div>
+      <% end %>
+    <% else %>
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        <%= value %>
+      </div>
+    <% end %>
+  <% elsif key == "success" %>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      <%= value %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="spacer">
+  <div class="users-index-container create-container">
+    <div class="users-index users-create">
+      <h2>Sign Up</h2>
+      <%= form_with(model: @user, local: true) do |f| %>
+        <div class="mb-3">
+          <%= f.label :name, class: 'form-label' %>
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+
+        <div class="mb-3">
+          <%= f.label :email, class: 'form-label' %>
+          <%= f.email_field :email, class: 'form-control' %>
+        </div>
+
+        <div class="mb-3">
+          <%= f.label :password, class: 'form-label' %>
+          <%= f.password_field :password, class: 'form-control' %>
+        </div>
+
+        <div class="mb-3">
+          <%= f.label :password_confirmation, "Confirmation", class: 'form-label' %>
+          <%= f.password_field :password_confirmation, class: 'form-control' %>
+        </div>
+
+        <%= f.submit "Join", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>

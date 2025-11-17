@@ -11,12 +11,12 @@
 
  <div class="user-rounds-input-container">
   <div class="user-rounds-input form-control" type="text" >
-    <%= form_with model: @user_rounds , local: true do |f| %>
+    <%= form_with model: @user_round, local: true do |f| %>
       <%= f.hidden_field :round_id %>
   <p> <%= f.label :round_id %>
   
      <div data-controller="course">
-        <%= f.select :round_id, options_for_select(@round.reverse.map{ |r| ["#{r.course.capitalize} (#{r.created_at.strftime('%m/%d/%Y')})", r.id] }), {prompt: "Select your round"}, {class: 'form-select text-center'} %>
+        <%= f.select :round_id, options_for_select(@rounds.reverse.map{ |r| ["#{r.course.capitalize} (#{r.created_at.strftime('%m/%d/%Y')})", r.id] }), {prompt: "Select your round"}, {class: 'form-select text-center'} %>
 
 
       </div>
@@ -68,7 +68,7 @@
         <th>Date</th>
         <th>Score</th>
       </tr>
-        <% @user_round.reverse.each do |user_round| %>
+        <% @user_rounds.reverse.each do |user_round| %>
           <tr >
             <td><%= user_round.user.name.capitalize  %></td>
             <td><a href="/current/<%=user_round.round.id%>"><%= user_round.round.course.capitalize %></a> </td>

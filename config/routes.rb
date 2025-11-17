@@ -1,36 +1,18 @@
 Rails.application.routes.draw do
-  get '/users', to: 'users#index'
-  get '/users/:id', to: 'users#show'
-  post '/users/new', to: "users#create"
-  patch '/users/:id', to: "users#update"
-  delete '/users/":id"', to: "users#delete"
+  # Root and authentication routes
+  root "users#home"
 
-
-
-  get "/rounds", to: 'rounds#index'
-  get '/rounds/:id', to: 'rounds#show'
-  post '/rounds', to: "rounds#create"
-  patch '/rounds/:id', to: "rounds#update"
-  delete '/rounds/:id', to: "rounds#delete"
-
-
-  get "/user_rounds", to: 'user_rounds#index'
-  get '/user_rounds/:id', to: 'user_rounds#show'
-  post '/user_rounds', to: "user_rounds#create"
-  patch '/user_rounds/:id', to: "user_rounds#update"
-  delete '/user_rounds/":id"', to: "user_rounds#delete"
-
-  get '/current/:id', to: "user_rounds#current_round"
-
-  get '/', to: "users#home"
-  get '/signup', to: "users#create"
-
-
+  get '/signup', to: "users#new"
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
-  
+  delete '/logout', to: 'sessions#destroy'
 
+  # RESTful resources
+  resources :users
+  resources :rounds
+  resources :user_rounds
 
-
+  # Custom route for viewing all players in a specific round
+  get '/current/:id', to: 'user_rounds#current_round', as: 'current_round'
 end
